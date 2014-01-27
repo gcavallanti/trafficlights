@@ -273,7 +273,7 @@ call s:HL('PmenuThumb', 'brightgravel')
 " }}}
 " Diffs {{{
 
-call s:HL('DiffDelete', 'black', 'coal')
+call s:HL('DiffDelete', 'black', 'black')
 call s:HL('DiffAdd',    '',     'deepergravel')
 call s:HL('DiffChange', '',     'darkgravel')
 call s:HL('DiffText',   'white', 'deepergravel', 'bold')
@@ -282,7 +282,7 @@ call s:HL('DiffText',   'white', 'deepergravel', 'bold')
 " Spelling {{{
 
 if has("spell")
-    call s:HL('SpellCap', 'lightyellow', 'bg', 'undercurl,bold', 'dalespale')
+    call s:HL('SpellCap', 'lightyellow', 'bg', 'undercurl,bold', 'lightyellow')
     call s:HL('SpellBad', '', 'bg', 'undercurl', 'lightyellow')
     call s:HL('SpellLocal', '', '', 'undercurl', 'lightyellow')
     call s:HL('SpellRare', '', '', 'undercurl', 'lightyellow')
