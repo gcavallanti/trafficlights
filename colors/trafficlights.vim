@@ -34,29 +34,29 @@ endif " }}}
 let s:bwc = {}
 
 let s:bwc.white           = ['ffffff', 231]
-let s:bwc.brightestgravel = ['d9cec3', 255]
-let s:bwc.brightgravel    = ['d9cec3', 252]
-let s:bwc.plain           = ['f8f6f2', 250]
-let s:bwc.lightgravel     = ['998f84', 245]
-let s:bwc.gravel          = ['857f78', 243]
-let s:bwc.mediumgravel    = ['666462', 241]
-let s:bwc.deepgravel      = ['45413b', 240]
-let s:bwc.deepergravel    = ['45413b', 237]
-let s:bwc.deepestgravel   = ['35322d', 236]
-let s:bwc.darkgravel      = ['242321', 235]
-let s:bwc.blackgravel     = ['1c1b1a', 234]
-let s:bwc.blackestgravel  = ['141413', 233]
+let s:bwc.brightestgravel = ['eeeeee', 255]
+let s:bwc.brightgravel    = ['d0d0d0', 252]
+let s:bwc.plain           = ['bcbcbc', 250]
+let s:bwc.lightgravel     = ['8a8a8a', 245]
+let s:bwc.gravel          = ['767676', 243]
+let s:bwc.mediumgravel    = ['626262', 241]
+let s:bwc.deepgravel      = ['585858', 240]
+let s:bwc.deepergravel    = ['3a3a3a', 237]
+let s:bwc.deepestgravel   = ['303030', 236]
+let s:bwc.darkgravel      = ['262626', 235]
+let s:bwc.blackgravel     = ['1c1c1c', 234]
+let s:bwc.blackestgravel  = ['121212', 233]
 let s:bwc.black           = ['000000', 232]
 
-let s:bwc.lightyellow     = ['fade3e', 221]
-let s:bwc.lighteryellow   = ['f4cf86', 222]
-let s:bwc.red             = ['ff2c4b', 167]
+let s:bwc.lightyellow     = ['ffcc66', 221]
+let s:bwc.lighteryellow   = ['ffcc66', 222]
 let s:bwc.green           = ['8cffba', 121]
-let s:bwc.lightblue       = ['0a9dff', 33]
-let s:bwc.orange          = ['ffa724', 214]
 let s:bwc.lightgreen      = ['aeee00', 118]
-let s:bwc.lightpurple     = ['ff9eb8', 212]
+let s:bwc.lightblue       = ['0a9dff', 69]
+let s:bwc.orange          = ['ffa724', 214]
+let s:bwc.red             = ['ff2c4b', 167]
 let s:bwc.purple          = ['b88853', 99]
+let s:bwc.lightpurple     = ['ff9eb8', 212]
 let s:bwc.lightbrown      = ['c7915b', 173]
 let s:bwc.darkbrown       = ['88633f', 95]
 
@@ -143,7 +143,7 @@ call s:HL('TabLine', 'plain', s:tabline, 'none')
 call s:HL('TabLineFill', 'plain', s:tabline, 'none')
 call s:HL('TabLineSel', 'black', 'lightblue', 'none')
 
-call s:HL('MatchParen', 'lightyellow', 'darkgravel', 'bold')
+call s:HL('MatchParen', 'lightgreen', 'bg', 'bold')
 
 call s:HL('NonText',    'deepgravel', 'bg')
 call s:HL('SpecialKey', 'deepgravel', 'bg')
@@ -151,33 +151,33 @@ call s:HL('SpecialKey', 'deepgravel', 'bg')
 call s:HL('Visual',    '',  'deepergravel')
 call s:HL('VisualNOS', '',  'deepergravel')
 
-call s:HL('Search',    'white', 'darkbrown', 'bold')
-call s:HL('IncSearch', 'white', 'red',    'bold')
+call s:HL('Search',    'black', 'purple', 'none')
+call s:HL('IncSearch', 'black', 'lightpurple',    'none')
 
 call s:HL('Underlined', 'fg', '', 'underline')
 
-call s:HL('StatusLine',   'brightestgravel', 'deepestgravel', 'bold')
-call s:HL('StatusLineNC', 'deepgravel', 'darkgravel', 'bold')
-call s:HL('User1', 'brightestgravel', 'darkgravel', 'bold')
-call s:HL('User2', 'white', 'orange', 'bold')
-call s:HL('User3', 'gravel', 'deepestgravel', 'bold')
-call s:HL('User4', 'brightestgravel', 'deepestgravel', 'bold')
-call s:HL('User5', 'brightestgravel', 'deepergravel', 'bold')
-call s:HL('User6', 'white', 'deepgravel', 'bold')
-call s:HL('User7', 'white', 'red', 'bold')
-call s:HL('User8', 'white', 'lightblue', 'bold')
-call s:HL('User9', 'white', 'purple', 'bold')
-call s:HL('User0', 'white', 'deepgravel', 'bold')
+call s:HL('StatusLine',   'brightestgravel', 'deepestgravel', 'none')
+call s:HL('StatusLineNC', 'deepgravel', 'darkgravel', 'none')
+call s:HL('User1', 'brightestgravel', 'darkgravel', 'none')
+call s:HL('User2', 'white', 'orange', 'none')
+call s:HL('User3', 'gravel', 'deepestgravel', 'none')
+call s:HL('User4', 'brightestgravel', 'deepestgravel', 'none')
+call s:HL('User5', 'brightestgravel', 'deepergravel', 'none')
+call s:HL('User6', 'white', 'deepgravel', 'none')
+call s:HL('User7', 'white', 'red', 'none')
+call s:HL('User8', 'white', 'lightblue', 'none')
+call s:HL('User9', 'white', 'purple', 'none')
+call s:HL('User0', 'white', 'deepgravel', 'none')
 
-call s:HL('Directory', 'lighteryellow', '', 'bold')
+call s:HL('Directory', 'lightblue', '', 'none')
 
 call s:HL('Title', 'lightgreen')
 
-call s:HL('ErrorMsg',   'red',       'bg', 'bold')
-call s:HL('MoreMsg',    'lightyellow',   '',   'bold')
-call s:HL('ModeMsg',    'lighteryellow', '',   'bold')
-call s:HL('Question',   'lighteryellow', '',   'bold')
-call s:HL('WarningMsg', 'lightpurple',       '',   'bold')
+call s:HL('ErrorMsg',   'red',       'bg', 'none')
+call s:HL('MoreMsg',    'lightyellow',   '',   'none')
+call s:HL('ModeMsg',    'lighteryellow', '',   'none')
+call s:HL('Question',   'lighteryellow', '',   'none')
+call s:HL('WarningMsg', 'lightpurple',       '',   'none')
 
 " This is a ctags tag, not an HTML one.  'Something you can use c-] on'.
 call s:HL('Tag', '', '', 'bold')
@@ -188,6 +188,7 @@ call s:HL('Tag', '', '', 'bold')
 " }}}
 " Gutter {{{
 
+call s:HL('CursorLineNr',     'lightgravel', s:gutter)
 call s:HL('LineNr',     'deepergravel', s:gutter)
 call s:HL('SignColumn', '',             s:gutter)
 call s:HL('FoldColumn', 'mediumgravel', s:gutter)
@@ -433,12 +434,12 @@ call s:HL('cssClassName', 'orange', '', 'none')
 
 call s:HL('gitDiff', 'lightgravel', '',)
 
-call s:HL('diffRemoved', 'lightpurple', '',)
+call s:HL('diffRemoved', 'red', '',)
 call s:HL('diffAdded', 'lightgreen', '',)
 call s:HL('diffFile', 'black', 'red', 'bold')
 call s:HL('diffNewFile', 'black', 'red', 'bold')
 
-call s:HL('diffLine', 'black', 'orange', 'bold')
+call s:HL('diffLine', 'lightyellow', 'bg', 'none')
 call s:HL('diffSubname', 'orange', '', 'none')
 
 " }}}
