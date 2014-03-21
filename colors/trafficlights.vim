@@ -161,7 +161,7 @@ call s:HL('TabLine', 'gray250', s:tabline, 'none')
 call s:HL('TabLineFill', 'gray250', s:tabline, 'none')
 call s:HL('TabLineSel', 'black', 'nblue', 'none')
 
-call s:HL('MatchParen', 'black', 'white', 'bold')
+call s:HL('MatchParen', 'white', 'gray245', 'bold')
 
 call s:HL('NonText',    'gray237', 'nocol')
 call s:HL('SpecialKey', 'gray237', 'nocol')
@@ -176,13 +176,13 @@ call s:HL('Underlined', 'nocol', '', 'underline')
 
 call s:HL('StatusLine',   'gray255', 'gray236', 'none')
 call s:HL('StatusLineNC', 'gray240', 'gray235', 'none')
-call s:HL('User1', 'gray255', 'gray235', 'none')
-call s:HL('User2', 'white', 'byellow', 'none')
-call s:HL('User3', 'gray243', 'gray236', 'none')
-call s:HL('User4', 'gray255', 'gray236', 'none')
-call s:HL('User5', 'gray255', 'gray237', 'none')
-call s:HL('User6', 'white', 'gray240', 'none')
-call s:HL('User7', 'white', 'nred', 'none')
+call s:HL('User1', 'gray241', 'gray236', 'none')
+call s:HL('User2', 'ngreen', 'gray236', 'none')
+call s:HL('User3', 'nyellow', 'gray236', 'none' )
+call s:HL('User4', 'nblue', 'gray236', 'none')
+call s:HL('User5', 'nmagenta', 'gray236', 'none')
+call s:HL('User6', 'ncyan', 'gray236', 'none')
+call s:HL('User7', 'gray250', 'gray235', 'none')
 call s:HL('User8', 'white', 'nblue', 'none')
 call s:HL('User9', 'white', 'nmagenta', 'none')
 call s:HL('User0', 'white', 'gray240', 'none')
@@ -214,7 +214,7 @@ call s:HL('LineNr',     'gray237', s:gutter)
 " call 'hi FoldColumn ctermfg=240 ctermbg=233'
 call s:HL('SignColumn', 'nocol', 'nocol', '')
 " hi SignColumn ctermbg=none
-call s:HL('FoldColumn', 'gray241', '', '')
+call s:HL('FoldColumn', 'gray241', 'nocol', '')
 
 " }}}
 " Cursor {{{
@@ -290,24 +290,24 @@ call s:HL('Ignore', 'gray243', '',      '')
 " Completion Menu {{{
 
 call s:HL('Pmenu', 'gray250', 'gray237')
-call s:HL('PmenuSel', 'black', 'nblue', 'bold')
+call s:HL('PmenuSel', 'white', 'nred', 'none')
 call s:HL('PmenuSbar', '', 'gray237')
 call s:HL('PmenuThumb', 'gray252')
 
 " }}}
 " Diffs {{{
 
-call s:HL('DiffDelete', 'black', 'black')
-call s:HL('DiffAdd',    '',     'gray237')
-call s:HL('DiffChange', '',     'gray235')
-call s:HL('DiffText',   'white', 'gray237', 'bold')
+call s:HL('DiffDelete', 'gray233', 'gray233')
+call s:HL('DiffAdd',    '',     'gray233')
+call s:HL('DiffChange', '',     'gray233')
+call s:HL('DiffText',   '', 'gray236', 'none')
 
 " }}}
 " Spelling {{{
 
 if has("spell")
     call s:HL('SpellCap', 'nyellow', 'nocol', 'none')
-    call s:HL('SpellBad', '', 'nocol', 'none')
+    call s:HL('SpellBad', '', 'nocol', 'underline')
     call s:HL('SpellLocal', '', '', 'undercurl', 'nyellow')
     call s:HL('SpellRare', '', '', 'undercurl', 'nyellow')
 endif
@@ -405,6 +405,18 @@ call s:HL('ShowMarksHLl', 'nblue', 'gray233')
 call s:HL('ShowMarksHLu', 'nblue', 'gray233')
 call s:HL('ShowMarksHLo', 'nblue', 'gray233')
 call s:HL('ShowMarksHLm', 'nblue', 'gray233')
+
+" }}}
+" ShowMarks {{{
+
+call s:HL('TagBarScope', 'nmagenta', '')
+call s:HL('TagBarKind', 'nred', '')
+call s:HL('TagBarNestedKind', 'nred', '')
+call s:HL('TagBarType', 'bmagenta', '')
+call s:HL('TagBarFoldIcon', 'gray243', '')
+call s:HL('TagBarVisibilityPublic', 'ngreen', '')
+call s:HL('TagBarVisibilityProtected', 'nyellow', '')
+call s:HL('TagBarVisibilityPrivate', 'nred', '')
 
 " }}}
 
@@ -510,11 +522,14 @@ endif
 " }}} 
 " Java {{{
 
-call s:HL('javaClassDecl', 'nred', '', 'bold')
-call s:HL('javaScopeDecl', 'nred', '', 'bold')
+call s:HL('javaClassDecl', 'nmagenta', '', 'none')
+call s:HL('javaScopeDecl', 'nmagenta', '', 'none')
 call s:HL('javaCommentTitle', 'gray243', '')
 call s:HL('javaDocTags', 'white', '', 'none')
 call s:HL('javaDocParam', 'nyellow', '', '')
+call s:HL('javaStorageClass', 'nmagenta', '', '')
+call s:HL('javaAnnotation', 'nmagenta', '', '')
+call s:HL('javaTypedef', 'ngreen', '', '')
 
 " }}}
 " LaTeX {{{
