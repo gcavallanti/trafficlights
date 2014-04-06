@@ -52,12 +52,12 @@ let s:bwc.nyellow  = ['ffcc66', 222]
 let s:bwc.byellow  = ['ff0066', 173]
 let s:bwc.ngreen   = ['66cc00', 112]
 let s:bwc.bgreen   = ['00ff00', 154]
-let s:bwc.nblue    = ['6666ff', 63]
-let s:bwc.bblue    = ['0066cc', 26]
+let s:bwc.nblue    = ['6666ff', 69]
+let s:bwc.bblue    = ['0066cc', 25]
 let s:bwc.nred     = ['ff6666', 203]
 let s:bwc.bred     = ['ff0000', 197]
 let s:bwc.nmagenta = ['9966ff', 99]
-let s:bwc.bmagenta = ['cc66ff', 171]
+let s:bwc.bmagenta = ['cc66ff', 134]
 let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
 let s:bwc.bcyan    = ['66ffff', 80]
 
@@ -157,9 +157,9 @@ call s:HL('CursorLine',   '', 'gray234', 'none')
 call s:HL('CursorColumn', '', 'gray234')
 call s:HL('ColorColumn',  '', 'gray234')
 
-call s:HL('TabLine', 'gray250', s:tabline, 'none')
-call s:HL('TabLineFill', 'gray250', s:tabline, 'none')
-call s:HL('TabLineSel', 'black', 'nblue', 'none')
+call s:HL('TabLine', 'gray243', 'gray237', 'none')
+call s:HL('TabLineFill', 'gray250', 'nocol', 'none')
+call s:HL('TabLineSel', 'gray233', 'gray240', 'none')
 
 call s:HL('MatchParen', 'white', 'gray245', 'bold')
 
@@ -177,7 +177,8 @@ call s:HL('Underlined', 'nocol', '', 'underline')
 call s:HL('StatusLine',   'gray255', 'gray236', 'none')
 call s:HL('StatusLineNC', 'gray240', 'gray235', 'none')
 call s:HL('User1', 'gray241', 'gray236', 'none')
-call s:HL('User2', 'ngreen', 'gray236', 'none')
+" call s:HL('User1', 'nred', 'gray236', 'none')
+call s:HL('User2', 'gray241', 'gray236', 'none')
 call s:HL('User3', 'nyellow', 'gray236', 'none' )
 call s:HL('User4', 'nblue', 'gray236', 'none')
 call s:HL('User5', 'nmagenta', 'gray236', 'none')
@@ -227,7 +228,7 @@ call s:HL('iCursor', 'black', 'nblue', 'none')
 " Syntax highlighting {{{
 
 " Start with a simple base.
-call s:HL('Special', 'gray250')
+call s:HL('Special', 'ngreen')
 
 " Comments are slightly brighter than folds, to make 'headers' easier to see.
 call s:HL('Comment',        'gray243')
@@ -297,10 +298,25 @@ call s:HL('PmenuThumb', 'gray252')
 " }}}
 " Diffs {{{
 
-call s:HL('DiffDelete', 'gray233', 'gray233')
-call s:HL('DiffAdd',    '',     'gray233')
-call s:HL('DiffChange', '',     'gray233')
-call s:HL('DiffText',   '', 'gray236', 'none')
+" call s:HL('DiffDelete', 'gray233', 'gray233')
+" call s:HL('DiffAdd',    'gray250',     'gray237')
+" call s:HL('DiffChange', '',     'gray237')
+" call s:HL('DiffText',   'gray255', 'gray241', 'none')
+" call s:HL('DiffDelete', 'gray233', 'gray233')
+" call s:HL('DiffAdd',    '',     'gray235')
+" call s:HL('DiffChange', '',     'gray235')
+" call s:HL('DiffText',   'nocol', 'gray237', 'none')
+
+call s:HL('DiffDelete', 'gray235', 'nocol')
+call s:HL('DiffAdd',    'gray250',     'bblue')
+call s:HL('DiffChange', '',     'bblue')
+call s:HL('DiffText',   'gray255', 'nblue', 'none')
+
+" }}}
+" Netrw {{{
+
+call s:HL('netrwSymLink', 'ncyan', '')
+call s:HL('netrwClassify', 'gray250', '')
 
 " }}}
 " Spelling {{{
@@ -409,6 +425,12 @@ call s:HL('ShowMarksHLm', 'nblue', 'gray233')
 " }}}
 " ShowMarks {{{
 
+call s:HL('IndentGuidesOdd', 'gray240', 'nocol')
+call s:HL('IndentGuidesEven', 'gray250', 'gray234')
+
+" }}}
+" ShowMarks {{{
+
 call s:HL('TagBarScope', 'nmagenta', '')
 call s:HL('TagBarKind', 'nred', '')
 call s:HL('TagBarNestedKind', 'nred', '')
@@ -445,11 +467,14 @@ call s:HL('clojureAnonArg', 'white', '', 'bold')
 " CSS {{{
 
 if g:trafficlights_css_props_highlight
-    call s:HL('cssColorProp', 'byellow', '', 'none')
-    call s:HL('cssBoxProp', 'byellow', '', 'none')
-    call s:HL('cssTextProp', 'byellow', '', 'none')
-    call s:HL('cssRenderProp', 'byellow', '', 'none')
-    call s:HL('cssGeneratedContentProp', 'byellow', '', 'none')
+    call s:HL('cssColorProp', 'nyellow', '', 'none')
+    call s:HL('cssBoxProp', 'nyellow', '', 'none')
+    call s:HL('cssTextProp', 'nyellow', '', 'none')
+    call s:HL('cssRenderProp', 'nyellow', '', 'none')
+    call s:HL('cssGeneratedContentProp', 'nyellow', '', 'none')
+    call s:HL('cssPositioningProp', 'nyellow', '', 'none')
+    call s:HL('cssDimensionProp', 'nyellow', '', 'none')
+    call s:HL('cssBackgroundProp', 'nyellow', '', 'none')
 else
     call s:HL('cssColorProp', 'nocol', '', 'none')
     call s:HL('cssBoxProp', 'nocol', '', 'none')
@@ -458,12 +483,23 @@ else
     call s:HL('cssGeneratedContentProp', 'nocol', '', 'none')
 end
 
-call s:HL('cssValueLength', 'nmagenta', '', 'bold')
-call s:HL('cssColor', 'nmagenta', '', 'bold')
+call s:HL('cssValueLength', 'byellow', '', 'none')
+call s:HL('cssColor', 'byellow', '', 'none')
 call s:HL('cssBraces', 'gray245', '', 'none')
-call s:HL('cssIdentifier', 'byellow', '', 'bold')
-call s:HL('cssClassName', 'byellow', '', 'none')
+call s:HL('cssIdentifier', 'bmagenta', '', 'none')
+call s:HL('cssClassName', 'nmagenta', '', 'none')
+call s:HL('cssTagName', 'nocol', '', 'none')
+call s:HL('cssDefinition', 'nyellow', '', 'none')
+call s:HL('cssUnitDecorators', 'nred', '', 'none')
+call s:HL('cssCommonAttr', 'byellow', '', 'none')
+" }}}
 
+" javascript {{{
+
+call s:HL('javaScriptIdentifier', 'nmagenta', '', 'none')
+call s:HL('javaScriptBoolean', 'nred', '', 'none')
+call s:HL('javaScriptBraces', 'nocol', '', 'none')
+call s:HL('javaScriptMember', 'ngreen', '', 'none')
 " }}}
 " Diff {{{
 
@@ -655,6 +691,7 @@ call s:HL('VimMapMod',    'bmagenta', '', 'none')
 call s:HL('VimMapModKey', 'bmagenta', '', 'none')
 call s:HL('VimNotation', 'bmagenta', '', 'none')
 call s:HL('VimBracket', 'bmagenta', '', 'none')
+call s:HL('VimParenSep', 'nocol', '', 'none')
 call s:HL('VimOption', 'ngreen', '', 'none')
 
 " }}}
@@ -669,7 +706,9 @@ call s:HL('zshDeref', 'nmagenta', '')
 call s:HL('zshQuoted', 'nred', '')
 call s:HL('zshTypes', 'gray250', '')
 call s:HL('zshSubst', 'nmagenta', '')
-call s:HL('bashSpecialVariables', 'ngreen', '')
+" call s:HL('bashSpecialVariables', 'ngreen', '')
+" call s:HL('bashSpecialVariables', 'ngreen', '')
+" call s:HL('bashSpecialVariables', 'ngreen', '')
 "
 
 "
