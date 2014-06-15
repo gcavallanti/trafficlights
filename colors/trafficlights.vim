@@ -61,7 +61,8 @@ let s:bwc.bmagenta = ['cc66ff', 134]
 let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
 let s:bwc.bcyan    = ['66ffff', 80]
 
-let s:bwc.test    = ['66ffff', 0]
+let s:bwc.test    = ['66ffff', 242]
+let s:bwc.test1    = ['66ffff', 238]
 let s:bwc.nocol    = ['66ffff', 'none']
  
 " let s:bwc.lightyellow     = ['ffcc66', 221]
@@ -157,11 +158,11 @@ call s:HL('CursorLine',   '', 'gray234', 'none')
 call s:HL('CursorColumn', '', 'gray234')
 call s:HL('ColorColumn',  '', 'gray234')
 
-call s:HL('TabLine', 'gray243', 'gray237', 'none')
+call s:HL('TabLine', 'gray235', 'gray240', 'none')
 call s:HL('TabLineFill', 'gray250', 'nocol', 'none')
-call s:HL('TabLineSel', 'gray233', 'gray240', 'none')
+call s:HL('TabLineSel', 'gray233', 'gray245', 'none')
 
-call s:HL('MatchParen', 'white', 'gray245', 'bold')
+call s:HL('MatchParen', 'gray252', 'gray240', 'bold')
 
 call s:HL('NonText',    'gray237', 'nocol')
 call s:HL('SpecialKey', 'gray237', 'nocol')
@@ -169,14 +170,14 @@ call s:HL('SpecialKey', 'gray237', 'nocol')
 call s:HL('Visual',    '',  'gray237')
 call s:HL('VisualNOS', '',  'gray237')
 
-call s:HL('Search',    'black', 'nmagenta', 'none')
-call s:HL('IncSearch', 'black', 'bmagenta',    'none')
+call s:HL('Search',    'white', 'nmagenta', 'none')
+call s:HL('IncSearch', 'white', 'bred',    'none')
 
 call s:HL('Underlined', 'nocol', '', 'underline')
 
-call s:HL('StatusLine',   'gray255', 'gray236', 'none')
-call s:HL('StatusLineNC', 'gray240', 'gray235', 'none')
-call s:HL('User1', 'gray241', 'gray236', 'none')
+call s:HL('StatusLine',   'gray233', 'test', 'none')
+call s:HL('StatusLineNC', 'gray233', 'test1', 'none')
+call s:HL('User1', 'gray234', 'test', 'none')
 " call s:HL('User1', 'nred', 'gray236', 'none')
 call s:HL('User2', 'gray241', 'gray236', 'none')
 call s:HL('User3', 'nyellow', 'gray236', 'none' )
@@ -698,20 +699,21 @@ call s:HL('VimOption', 'ngreen', '', 'none')
 
 " sh {{{
 
-" call s:HL('shDerefSimple', 'gray250', '')
-" call s:HL('shSetList', 'gray250', '')
-" call s:HL('PreProc', 'bgreen', '')
-" call s:HL('shDeref', 'gray250', '')
+call s:HL('shDerefSimple', 'gray250', '')
+call s:HL('shFunctionKey', 'gray250', 'nocol', 'bold')
+call s:HL('shFunction', 'nmagenta', 'nocol', '')
+call s:HL('shCommandSub', 'nocol', '', '')
+call s:HL('shCmdSubRegion', 'ngreen', '')
+call s:HL('shSpecial', 'gray250', '')
+call s:HL('shDeref', 'gray250', '')
+
+" }}}
+
+" zsh {{{
 call s:HL('zshDeref', 'nmagenta', '')
 call s:HL('zshQuoted', 'nred', '')
 call s:HL('zshTypes', 'gray250', '')
 call s:HL('zshSubst', 'nmagenta', '')
-" call s:HL('bashSpecialVariables', 'ngreen', '')
-" call s:HL('bashSpecialVariables', 'ngreen', '')
-" call s:HL('bashSpecialVariables', 'ngreen', '')
-"
-
-"
 " }}}
 
 " }}}
