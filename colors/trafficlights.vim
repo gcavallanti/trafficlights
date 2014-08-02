@@ -12,7 +12,7 @@ if !has("gui_running") && &t_Co != 88 && &t_Co != 256
     finish
 endif
 
-set background=dark
+" set background=dark
 
 if exists("syntax_on")
     syntax reset
@@ -29,58 +29,79 @@ if !exists("g:trafficlights_css_props_highlight") " {{{
 endif " }}}
 
 " }}}
+
 " Palette {{{
-
 let s:bwc = {}
-
-let s:bwc.white    = ['ffffff', 231]
-let s:bwc.gray255  = ['eeeeee', 255]
-let s:bwc.gray252  = ['d0d0d0', 252]
-let s:bwc.gray250  = ['bcbcbc', 250]
-let s:bwc.gray245  = ['8a8a8a', 245]
-let s:bwc.gray243  = ['767676', 243]
-let s:bwc.gray241  = ['626262', 241]
-let s:bwc.gray240  = ['585858', 240]
-let s:bwc.gray239  = ['3a3a3a', 239]
-let s:bwc.gray238  = ['3a3a3a', 238]
-let s:bwc.gray237  = ['3a3a3a', 237]
-let s:bwc.gray236  = ['303030', 236]
-let s:bwc.gray235  = ['262626', 235]
-let s:bwc.gray234  = ['1c1c1c', 234]
-let s:bwc.gray233  = ['121212', 233]
-let s:bwc.black    = ['000000', 232]
-
-let s:bwc.nyellow  = ['ffcc66', 222]
-let s:bwc.byellow  = ['ff0066', 220]
-let s:bwc.ngreen   = ['66cc00', 112]
-let s:bwc.bgreen   = ['00ff00', 22]
-let s:bwc.nblue    = ['6666ff', 69]
-let s:bwc.bblue    = ['0066cc', 25]
-let s:bwc.nred     = ['ff6666', 203]
-let s:bwc.bred     = ['ff0000', 197]
-let s:bwc.nmagenta = ['9966ff', 99]
-let s:bwc.bmagenta = ['cc66ff', 134]
-let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
-let s:bwc.bcyan    = ['66ffff', 80]
-
-let s:bwc.test    = ['66ffff', 242]
-let s:bwc.test1    = ['66ffff', 238]
 let s:bwc.nocol    = ['66ffff', 'none']
- 
-" let s:bwc.lightyellow     = ['ffcc66', 221]
-" let s:bwc.byellow   = ['ffcc66', 222]
-" let s:bwc.green           = ['8cffba', 121]
-" let s:bwc.ngreen      = ['aeee00', 118]
-" let s:bwc.nblue       = ['0a9dff', 69]
-" let s:bwc.orange          = ['ffa724', 214]
-" let s:bwc.red             = ['ff2c4b', 167]
-" let s:bwc.nmagenta          = ['b88853', 99]
-" let s:bwc.bmagenta     = ['ff9eb8', 212]
-" let s:bwc.lightbrown      = ['c7915b', 173]
-" let s:bwc.ncyan       = ['88633f', 95]
+if &background == 'dark'
 
+    let s:bwc.gray24  = ['ffffff', 231]
+    let s:bwc.gray23  = ['eeeeee', 255]
+    let s:bwc.gray20  = ['d0d0d0', 252]
+    let s:bwc.gray18  = ['bcbcbc', 250]
+    let s:bwc.gray13  = ['8a8a8a', 245]
+    let s:bwc.gray11  = ['767676', 243]
+    let s:bwc.gray10  = ['626262', 242]
+    let s:bwc.gray09  = ['626262', 241]
+    let s:bwc.gray08  = ['585858', 240]
+    let s:bwc.gray07  = ['3a3a3a', 239]
+    let s:bwc.gray06  = ['3a3a3a', 238]
+    let s:bwc.gray05  = ['3a3a3a', 237]
+    let s:bwc.gray04  = ['303030', 236]
+    let s:bwc.gray03  = ['262626', 235]
+    let s:bwc.gray02  = ['1c1c1c', 234]
+    let s:bwc.gray01  = ['121212', 233]
+    let s:bwc.gray00  = ['000000', 232]
 
+    let s:bwc.nyellow  = ['ffcc66', 222]
+    let s:bwc.byellow  = ['ff0066', 220]
+    let s:bwc.ngreen   = ['66cc00', 112]
+    let s:bwc.bgreen   = ['00ff00', 22]
+    let s:bwc.nblue    = ['6666ff', 69]
+    let s:bwc.bblue    = ['0066cc', 25]
+    let s:bwc.nred     = ['ff6666', 203]
+    let s:bwc.bred     = ['ff0000', 197]
+    let s:bwc.nmagenta = ['9966ff', 99]
+    let s:bwc.bmagenta = ['cc66ff', 134]
+    let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
+    let s:bwc.bcyan    = ['66ffff', 80]
+
+else
+
+    let s:bwc.gray24  = ['ffffff', 231] "0
+    let s:bwc.gray23  = ['eeeeee', 233] "1
+    let s:bwc.gray20  = ['d0d0d0', 236] "4
+    let s:bwc.gray18  = ['bcbcbc', 238] "6
+    let s:bwc.gray13  = ['8a8a8a', 243] "11
+    let s:bwc.gray11  = ['767676', 245] "13
+    let s:bwc.gray10  = ['626262', 246] "14
+    let s:bwc.gray09  = ['626262', 247] "15
+    let s:bwc.gray08  = ['585858', 248] "16
+    let s:bwc.gray07  = ['3a3a3a', 249] "17
+    let s:bwc.gray06  = ['3a3a3a', 250] "18
+    let s:bwc.gray05  = ['3a3a3a', 251] "19
+    let s:bwc.gray04  = ['303030', 252] "20
+    let s:bwc.gray03  = ['262626', 253] "21
+    let s:bwc.gray02  = ['1c1c1c', 254] "22
+    let s:bwc.gray01  = ['121212', 255] "23
+    let s:bwc.gray00  = ['000000', 231] "24
+
+    let s:bwc.nyellow  = ['ffcc66', 209]
+    let s:bwc.byellow  = ['ff0066', 220]
+    let s:bwc.ngreen   = ['66cc00', 34]
+    let s:bwc.bgreen   = ['00ff00', 22]
+    let s:bwc.nblue    = ['6666ff', 69]
+    let s:bwc.bblue    = ['0066cc', 25]
+    let s:bwc.nred     = ['ff6666', 203]
+    let s:bwc.bred     = ['ff0000', 197]
+    let s:bwc.nmagenta = ['9966ff', 56]
+    let s:bwc.bmagenta = ['cc66ff', 169]
+    let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
+    let s:bwc.bcyan    = ['66ffff', 80]
+
+endif
 " }}}
+
 " Highlighting Function {{{
 function! s:HL(group, fg, ...)
     " Arguments: group, guifg, guibg, gui, guisp
@@ -120,25 +141,25 @@ endfunction
 " Configuration Options {{{
 
 if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
-    let s:gutter = 'gray233'
+    let s:gutter = 'gray01'
 else
     let s:gutter = 'nocol'
 endif
 
 if exists('g:trafficlights_tabline')
     if g:trafficlights_tabline == 0
-        let s:tabline = 'gray233'
+        let s:tabline = 'gray01'
     elseif  g:trafficlights_tabline == 1
-        let s:tabline = 'gray234'
+        let s:tabline = 'gray02'
     elseif  g:trafficlights_tabline == 2
-        let s:tabline = 'gray235'
+        let s:tabline = 'gray03'
     elseif  g:trafficlights_tabline == 3
-        let s:tabline = 'gray240'
+        let s:tabline = 'gray08'
     else
-        let s:tabline = 'gray233'
+        let s:tabline = 'gray01'
     endif
 else
-    let s:tabline = 'gray234'
+    let s:tabline = 'gray02'
 endif
 
 " }}}
@@ -149,47 +170,47 @@ endif
 " General/UI {{{
 
 " call 'hi Normal ctermbg=NONE'
-call s:HL('Normal', 'gray250', '', 'none')
+call s:HL('Normal', 'gray18', '', 'none')
 
-call s:HL('Folded', 'gray241', 'nocol', 'none')
+call s:HL('Folded', 'gray09', 'nocol', 'none')
 
-call s:HL('VertSplit', 'gray235', 'nocol', 'none')
-" call s:HL('VertSplit', 'gray245', 'nocol', 'none')
+call s:HL('VertSplit', 'gray03', 'nocol', 'none')
+" call s:HL('VertSplit', 'gray13', 'nocol', 'none')
 
-call s:HL('CursorLine',   '', 'gray234', 'none')
-call s:HL('CursorColumn', '', 'gray234')
-call s:HL('ColorColumn',  '', 'gray234')
+call s:HL('CursorLine',   '', 'gray02', 'none')
+call s:HL('CursorColumn', '', 'gray02')
+call s:HL('ColorColumn',  '', 'gray02')
 
-call s:HL('TabLine', 'gray235', 'gray240', 'none')
-call s:HL('TabLineFill', 'gray250', 'nocol', 'none')
-call s:HL('TabLineSel', 'gray233', 'gray245', 'none')
+call s:HL('TabLine', 'gray03', 'gray08', 'none')
+call s:HL('TabLineFill', 'gray18', 'nocol', 'none')
+call s:HL('TabLineSel', 'gray01', 'gray13', 'none')
 
-call s:HL('MatchParen', 'gray252', 'gray240', 'bold')
+call s:HL('MatchParen', 'gray20', 'gray08', 'bold')
 
-call s:HL('NonText',    'gray237', 'nocol')
-call s:HL('SpecialKey', 'gray237', 'nocol')
+call s:HL('NonText',    'gray05', 'nocol')
+call s:HL('SpecialKey', 'gray05', 'nocol')
 
-call s:HL('Visual',    '',  'gray237')
-call s:HL('VisualNOS', '',  'gray237')
+call s:HL('Visual',    '',  'gray05')
+call s:HL('VisualNOS', '',  'gray05')
 
-call s:HL('Search',    'black', 'nyellow', 'none')
-call s:HL('IncSearch', 'black', 'byellow',    'none')
+call s:HL('Search',    'gray00', 'nyellow', 'none')
+call s:HL('IncSearch', 'gray00', 'byellow',    'none')
 
 call s:HL('Underlined', 'nocol', '', 'underline')
 
-call s:HL('StatusLine',   'gray233', 'gray245', 'none')
-call s:HL('StatusLineNC', 'gray245', 'gray236', 'none')
-call s:HL('User1', 'gray234', 'test', 'none')
-" call s:HL('User1', 'nred', 'gray236', 'none')
-call s:HL('User2', 'gray241', 'gray236', 'none')
-call s:HL('User3', 'nyellow', 'gray236', 'none' )
-call s:HL('User4', 'nblue', 'gray236', 'none')
-call s:HL('User5', 'nmagenta', 'gray236', 'none')
-call s:HL('User6', 'ncyan', 'gray236', 'none')
-call s:HL('User7', 'gray250', 'gray235', 'none')
-call s:HL('User8', 'white', 'nblue', 'none')
-call s:HL('User9', 'white', 'nmagenta', 'none')
-call s:HL('User0', 'white', 'gray240', 'none')
+call s:HL('StatusLine',   'gray01', 'gray13', 'none')
+call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
+call s:HL('User1', 'gray02', 'gray10', 'none')
+" call s:HL('User1', 'nred', 'gray04', 'none')
+call s:HL('User2', 'gray09', 'gray04', 'none')
+call s:HL('User3', 'nyellow', 'gray04', 'none' )
+call s:HL('User4', 'nblue', 'gray04', 'none')
+call s:HL('User5', 'nmagenta', 'gray04', 'none')
+call s:HL('User6', 'ncyan', 'gray04', 'none')
+call s:HL('User7', 'gray18', 'gray03', 'none')
+call s:HL('User8', 'gray24', 'nblue', 'none')
+call s:HL('User9', 'gray24', 'nmagenta', 'none')
+call s:HL('User0', 'gray24', 'gray08', 'none')
 
 call s:HL('Directory', 'nblue', '', 'none')
 
@@ -210,22 +231,22 @@ call s:HL('Tag', '', '', 'bold')
 " }}}
 " Gutter {{{
 
-call s:HL('CursorLineNr',     'gray245', s:gutter)
-call s:HL('LineNr',     'gray235', s:gutter)
-" call s:HL('LineNr',     'gray237', '', '')
+call s:HL('CursorLineNr',     'gray13', s:gutter)
+call s:HL('LineNr',     'gray03', s:gutter)
+" call s:HL('LineNr',     'gray05', '', '')
 " call 'hi SignColumn guifg=#000000 ctermfg=240 guibg=#000000 ctermbg=233 term=none'
 " hi SignColumn guifg=#000000 ctermfg=140 guibg=#000000 ctermbg='' term=none
 " call 'hi FoldColumn ctermfg=240 ctermbg=233'
 call s:HL('SignColumn', 'nocol', 'nocol', '')
 " hi SignColumn ctermbg=none
-call s:HL('FoldColumn', 'gray241', 'nocol', '')
+call s:HL('FoldColumn', 'gray09', 'nocol', '')
 
 " }}}
 " Cursor {{{
 
-call s:HL('Cursor',  'black', 'nblue', 'bold')
-call s:HL('vCursor', 'black', 'nblue', 'bold')
-call s:HL('iCursor', 'black', 'nblue', 'none')
+call s:HL('Cursor',  'gray00', 'nblue', 'bold')
+call s:HL('vCursor', 'gray00', 'nblue', 'bold')
+call s:HL('iCursor', 'gray00', 'nblue', 'none')
 
 " }}}
 " Syntax highlighting {{{
@@ -234,24 +255,24 @@ call s:HL('iCursor', 'black', 'nblue', 'none')
 call s:HL('Special', 'ngreen')
 
 " Comments are slightly brighter than folds, to make 'headers' easier to see.
-call s:HL('Comment',        'gray243')
-call s:HL('Todo',           'gray245', 'nocol', 'none')
-call s:HL('SpecialComment', 'white', 'nocol', 'bold')
+call s:HL('Comment',        'gray11')
+call s:HL('Todo',           'gray13', 'nocol', 'none')
+call s:HL('SpecialComment', 'gray24', 'nocol', 'bold')
 
 " Strings are a nice, pale straw color.  Nothing too fancy.
 call s:HL('String', 'nyellow')
 
 " Control flow stuff is nred.
-call s:HL('Statement',   'gray250', '', 'bold')
-call s:HL('Keyword',     'gray250', '', 'bold')
-call s:HL('Conditional', 'gray250', '', 'bold')
-call s:HL('Operator',    'gray250', '', 'bold')
-call s:HL('Label',       'gray250', '', 'bold')
-call s:HL('Repeat',      'gray250', '', 'bold')
+call s:HL('Statement',   'gray20', '', 'bold')
+call s:HL('Keyword',     'gray18', '', 'bold')
+call s:HL('Conditional', 'gray18', '', 'bold')
+call s:HL('Operator',    'gray18', '', 'bold')
+call s:HL('Label',       'gray18', '', 'bold')
+call s:HL('Repeat',      'gray18', '', 'bold')
 
 
-" Functions and variable declarations are orange, because gray250 looks weird.
-call s:HL('Identifier', 'gray250', '', 'none')
+" Functions and variable declarations are orange, because gray18 looks weird.
+call s:HL('Identifier', 'gray18', '', 'none')
 call s:HL('Function',   'nmagenta', '', 'none')
 
 " Preprocessor stuff is ngreen, to make it pop.
@@ -286,40 +307,40 @@ call s:HL('Typedef', 'nred', '', 'none')
 call s:HL('Exception', 'ngreen', '', 'bold')
 
 " Misc
-call s:HL('Error',  'white',   'bred', 'bold')
-call s:HL('Debug',  'white',   '',      'bold')
-call s:HL('Ignore', 'gray243', '',      '')
+call s:HL('Error',  'gray24',   'bred', 'bold')
+call s:HL('Debug',  'gray24',   '',      'bold')
+call s:HL('Ignore', 'gray11', '',      '')
 
 " }}}
 " Completion Menu {{{
 
-call s:HL('Pmenu', 'gray250', 'gray237')
-call s:HL('PmenuSel', 'white', 'nred', 'none')
-call s:HL('PmenuSbar', '', 'gray237')
-call s:HL('PmenuThumb', 'gray252')
+call s:HL('Pmenu', 'gray18', 'gray05')
+call s:HL('PmenuSel', 'gray24', 'nred', 'none')
+call s:HL('PmenuSbar', '', 'gray05')
+call s:HL('PmenuThumb', 'gray20')
 
 " }}}
 " Diffs {{{
 
-" call s:HL('DiffDelete', 'gray233', 'gray233')
-" call s:HL('DiffAdd',    'gray250',     'gray237')
-" call s:HL('DiffChange', '',     'gray237')
-" call s:HL('DiffText',   'gray255', 'gray241', 'none')
-" call s:HL('DiffDelete', 'gray233', 'gray233')
-" call s:HL('DiffAdd',    '',     'gray235')
-" call s:HL('DiffChange', '',     'gray235')
-" call s:HL('DiffText',   'nocol', 'gray237', 'none')
+" call s:HL('DiffDelete', 'gray01', 'gray233')
+" call s:HL('DiffAdd',    'gray18',     'gray05')
+" call s:HL('DiffChange', '',     'gray05')
+" call s:HL('DiffText',   'gray23', 'gray09', 'none')
+" call s:HL('DiffDelete', 'gray01', 'gray233')
+" call s:HL('DiffAdd',    '',     'gray03')
+" call s:HL('DiffChange', '',     'gray03')
+" call s:HL('DiffText',   'nocol', 'gray05', 'none')
 
 call s:HL('DiffDelete', 'nred', 'bred')
 call s:HL('DiffAdd',    'ngreen',     'bgreen')
 call s:HL('DiffChange', 'nblue',     'bblue')
-call s:HL('DiffText',   'gray255', 'nblue', 'none')
+call s:HL('DiffText',   'gray23', 'nblue', 'none')
 
 " }}}
 " Netrw {{{
 
 call s:HL('netrwSymLink', 'ncyan', '')
-call s:HL('netrwClassify', 'gray250', '')
+call s:HL('netrwClassify', 'gray18', '')
 
 " }}}
 " Spelling {{{
@@ -339,31 +360,31 @@ endif
 " CtrlP {{{
 
     " the message when no match is found
-    call s:HL('CtrlPNoEntries', 'white', 'bred', 'none')
+    call s:HL('CtrlPNoEntries', 'gray24', 'bred', 'none')
 
     " the matched pattern
     call s:HL('CtrlPMatch', 'nyellow', '', 'none')
 
     " the line prefix '>' in the match window
-    call s:HL('CtrlPLinePre', 'gray240', 'nocol', 'none')
+    call s:HL('CtrlPLinePre', 'gray08', 'nocol', 'none')
 
     " the prompt’s base
-    call s:HL('CtrlPPrtBase', 'gray240', 'nocol', 'none')
+    call s:HL('CtrlPPrtBase', 'gray08', 'nocol', 'none')
 
     " the prompt’s text
-    call s:HL('CtrlPPrtText', 'gray250', 'nocol', 'none')
+    call s:HL('CtrlPPrtText', 'gray18', 'nocol', 'none')
 
     " the prompt’s cursor when moving over the text
-    call s:HL('CtrlPPrtCursor', 'black', 'bblue', 'bold')
+    call s:HL('CtrlPPrtCursor', 'gray00', 'bblue', 'bold')
 
     " 'prt' or 'win', also for 'regex'
-    call s:HL('CtrlPMode1', 'black', 'ngreen', 'bold')
+    call s:HL('CtrlPMode1', 'gray00', 'ngreen', 'bold')
 
     " 'file' or 'path', also for the local working dir
-    call s:HL('CtrlPMode2', 'black', 'ngreen', 'bold')
+    call s:HL('CtrlPMode2', 'gray00', 'ngreen', 'bold')
 
     " the scanning status
-    call s:HL('CtrlPStats', 'black', 'bblue', 'bold')
+    call s:HL('CtrlPStats', 'gray00', 'bblue', 'bold')
 
     " TODO: CtrlP extensions.
     " CtrlPTabExtra  : the part of each line that’s not matched against (Comment)
@@ -376,31 +397,31 @@ endif
 " EasyMotion {{{
 
 call s:HL('EasyMotionTarget', 'nblue',     'nocol', 'bold')
-call s:HL('EasyMotionShade',  'gray240', 'nocol')
+call s:HL('EasyMotionShade',  'gray08', 'nocol')
 
 " }}}
 " Interesting Words {{{
 
 " These are only used if you're me or have copied the <leader>hNUM mappings
 " from my Vimrc.
-call s:HL('InterestingWord1', 'black', 'byellow')
-call s:HL('InterestingWord2', 'black', 'ngreen')
-call s:HL('InterestingWord3', 'black', 'bgreen')
-call s:HL('InterestingWord4', 'black', 'nmagenta')
-call s:HL('InterestingWord5', 'black', 'bmagenta')
-call s:HL('InterestingWord6', 'black', 'nred')
+call s:HL('InterestingWord1', 'gray00', 'byellow')
+call s:HL('InterestingWord2', 'gray00', 'ngreen')
+call s:HL('InterestingWord3', 'gray00', 'bgreen')
+call s:HL('InterestingWord4', 'gray00', 'nmagenta')
+call s:HL('InterestingWord5', 'gray00', 'bmagenta')
+call s:HL('InterestingWord6', 'gray00', 'nred')
 
 
 " }}}
 " Makegreen {{{
 
-" hi GreenBar term=reverse ctermfg=white ctermbg=green guifg=black guibg=#9edf1c
-" hi RedBar   term=reverse ctermfg=white ctermbg=red guifg=white guibg=#C50048
+" hi GreenBar term=reverse ctermfg=gray24 ctermbg=green guifg=gray00 guibg=#9edf1c
+" hi RedBar   term=reverse ctermfg=gray24 ctermbg=red guifg=white guibg=#C50048
 
 " }}}
 " Rainbow Parentheses {{{
 
-call s:HL('level16c', 'gray241',   '', 'bold')
+call s:HL('level16c', 'gray09',   '', 'bold')
 call s:HL('level15c', 'nyellow',      '', '')
 call s:HL('level14c', 'bmagenta',          '', '')
 call s:HL('level13c', 'byellow',         '', '')
@@ -420,16 +441,16 @@ call s:HL('level1c',  'bgreen', '', '')
 " }}}
 " ShowMarks {{{
 
-call s:HL('ShowMarksHLl', 'nblue', 'gray233')
-call s:HL('ShowMarksHLu', 'nblue', 'gray233')
-call s:HL('ShowMarksHLo', 'nblue', 'gray233')
-call s:HL('ShowMarksHLm', 'nblue', 'gray233')
+call s:HL('ShowMarksHLl', 'nblue', 'gray01')
+call s:HL('ShowMarksHLu', 'nblue', 'gray01')
+call s:HL('ShowMarksHLo', 'nblue', 'gray01')
+call s:HL('ShowMarksHLm', 'nblue', 'gray01')
 
 " }}}
 " ShowMarks {{{
 
-call s:HL('IndentGuidesOdd', 'gray240', 'nocol')
-call s:HL('IndentGuidesEven', 'gray250', 'gray234')
+call s:HL('IndentGuidesOdd', 'gray08', 'nocol')
+call s:HL('IndentGuidesEven', 'gray18', 'gray02')
 
 " }}}
 " ShowMarks {{{
@@ -438,7 +459,7 @@ call s:HL('TagBarScope', 'nmagenta', '')
 call s:HL('TagBarKind', 'nred', '')
 call s:HL('TagBarNestedKind', 'nred', '')
 call s:HL('TagBarType', 'bmagenta', '')
-call s:HL('TagBarFoldIcon', 'gray243', '')
+call s:HL('TagBarFoldIcon', 'gray11', '')
 call s:HL('TagBarVisibilityPublic', 'ngreen', '')
 call s:HL('TagBarVisibilityProtected', 'nyellow', '')
 call s:HL('TagBarVisibilityPrivate', 'nred', '')
@@ -462,9 +483,9 @@ call s:HL('clojureKeyword', 'byellow', '', 'none')
 call s:HL('clojureFunc',   'bmagenta', '', 'none')
 call s:HL('clojureRepeat', 'bmagenta', '', 'none')
 
-call s:HL('clojureParen0', 'gray245', '', 'none')
+call s:HL('clojureParen0', 'gray13', '', 'none')
 
-call s:HL('clojureAnonArg', 'white', '', 'bold')
+call s:HL('clojureAnonArg', 'gray24', '', 'bold')
 
 " }}}
 " CSS {{{
@@ -488,7 +509,7 @@ end
 
 call s:HL('cssValueLength', 'byellow', '', 'none')
 call s:HL('cssColor', 'byellow', '', 'none')
-call s:HL('cssBraces', 'gray245', '', 'none')
+call s:HL('cssBraces', 'gray13', '', 'none')
 call s:HL('cssIdentifier', 'bmagenta', '', 'none')
 call s:HL('cssClassName', 'nmagenta', '', 'none')
 call s:HL('cssTagName', 'nocol', '', 'none')
@@ -506,7 +527,7 @@ call s:HL('javaScriptMember', 'ngreen', '', 'none')
 " }}}
 " Diff {{{
 
-call s:HL('gitDiff', 'gray245', '',)
+call s:HL('gitDiff', 'gray13', '',)
 
 call s:HL('diffRemoved', 'nred', '',)
 call s:HL('diffAdded', 'ngreen', '',)
@@ -530,32 +551,32 @@ call s:HL('djangoVarBlock', 'byellow', '')
 " call s:HL('htmlString',    'nmagenta', 'nocol', 'none')
 
 " Punctuation
-call s:HL('htmlTag',    'gray250', 'nocol', 'none')
-call s:HL('htmlEndTag', 'gray250', 'nocol', 'none')
+call s:HL('htmlTag',    'gray13', 'nocol', 'none')
+call s:HL('htmlEndTag', 'gray13', 'nocol', 'none')
 
 " Tag names
 call s:HL('htmlTagName',        'nred', '', 'none')
-call s:HL('htmlTagN',        'gray250', '', 'none')
+call s:HL('htmlTagN',        'gray18', '', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', '', 'none')
 call s:HL('htmlSpecialChar',    'nred',   '', 'none')
 
 " Attributes
-call s:HL('htmlArg', 'gray250', '', 'none')
+call s:HL('htmlArg', 'gray13', '', 'none')
 
 call s:HL('htmlTitle', 'nyellow', '', 'none')
-call s:HL('htmlH1', 'nyellow', '', 'none')
-call s:HL('htmlH2', 'nyellow', '', 'none')
-call s:HL('htmlH3', 'nyellow', '', 'none')
-call s:HL('htmlH4', 'nyellow', '', 'none')
-call s:HL('htmlH5', 'nyellow', '', 'none')
-call s:HL('htmlH6', 'nyellow', '', 'none')
+call s:HL('htmlH1', 'gray20', '', 'bold')
+call s:HL('htmlH2', 'gray20', '', 'bold')
+call s:HL('htmlH3', 'gray20', '', 'none')
+call s:HL('htmlH4', 'gray20', '', 'none')
+call s:HL('htmlH5', 'nblue', '', 'none')
+call s:HL('htmlH6', 'nblue', '', 'none')
 
 " Stuff inside an <a> tag
 
 if g:trafficlights_html_link_underline
-    call s:HL('htmlLink', 'gray245', '', 'underline')
+    call s:HL('htmlLink', 'gray13', '', 'underline')
 else
-    call s:HL('htmlLink', 'gray250', '', 'none')
+    call s:HL('htmlLink', 'gray18', '', 'none')
 endif
 
 " }}} 
@@ -563,8 +584,8 @@ endif
 
 call s:HL('javaClassDecl', 'nmagenta', '', 'none')
 call s:HL('javaScopeDecl', 'nmagenta', '', 'none')
-call s:HL('javaCommentTitle', 'gray243', '')
-call s:HL('javaDocTags', 'white', '', 'none')
+call s:HL('javaCommentTitle', 'gray11', '')
+call s:HL('javaDocTags', 'gray24', '', 'none')
 call s:HL('javaDocParam', 'nyellow', '', '')
 call s:HL('javaStorageClass', 'nmagenta', '', '')
 call s:HL('javaAnnotation', 'nmagenta', '', '')
@@ -586,9 +607,9 @@ call s:HL('texMath', 'byellow', '', 'none')
 call s:HL('texMathMatcher', 'byellow', '', 'none')
 call s:HL('texRefLabel', 'byellow', '', 'none')
 call s:HL('texRefZone', 'ngreen', '', 'none')
-call s:HL('texComment', 'gray243', '', 'none')
+call s:HL('texComment', 'gray11', '', 'none')
 call s:HL('texDelimiter', 'byellow', '', 'none')
-call s:HL('texZone', 'gray252', '', 'none')
+call s:HL('texZone', 'gray20', '', 'none')
 
 augroup trafficlights_tex
     au!
@@ -612,13 +633,13 @@ call s:HL('lispyscriptRepeat', 'bmagenta', '', 'none')
 " Mail {{{
 
 call s:HL('mailSubject', 'byellow', '', 'bold')
-call s:HL('mailHeader', 'gray245', '', '')
-call s:HL('mailHeaderKey', 'gray245', '', '')
-call s:HL('mailHeaderEmail', 'white', '', '')
+call s:HL('mailHeader', 'gray13', '', '')
+call s:HL('mailHeaderKey', 'gray13', '', '')
+call s:HL('mailHeaderEmail', 'gray24', '', '')
 call s:HL('mailURL', 'nmagenta', '', 'underline')
-call s:HL('mailSignature', 'gray243', '', 'none')
+call s:HL('mailSignature', 'gray11', '', 'none')
 
-call s:HL('mailQuoted1', 'gray243', '', 'none')
+call s:HL('mailQuoted1', 'gray11', '', 'none')
 call s:HL('mailQuoted2', 'bmagenta', '', 'none')
 call s:HL('mailQuoted3', 'byellow', '', 'none')
 call s:HL('mailQuoted4', 'byellow', '', 'none')
@@ -627,25 +648,25 @@ call s:HL('mailQuoted5', 'ngreen', '', 'none')
 " }}}
 " Markdown {{{
 
-call s:HL('markdownHeadingRule', 'gray245', '', 'none')
-call s:HL('markdownHeadingDelimiter', 'gray245', '', 'none')
-call s:HL('markdownOrderedListMarker', 'gray245', '', 'none')
-call s:HL('markdownListMarker', 'gray245', '', 'none')
+call s:HL('markdownHeadingRule', 'gray13', '', 'none')
+call s:HL('markdownHeadingDelimiter', 'gray13', '', 'none')
+call s:HL('markdownOrderedListMarker', 'gray13', '', 'none')
+call s:HL('markdownListMarker', 'gray13', '', 'none')
 call s:HL('markdownItalic', 'nyellow', '', 'none')
 call s:HL('markdownBold', 'nyellow', '', 'none')
-call s:HL('markdownH1', 'white', '', 'none')
-call s:HL('markdownH2', 'gray252', '', 'none')
-call s:HL('markdownH3', 'gray250', '', 'none')
-call s:HL('markdownH4', 'gray250', '', 'none')
-call s:HL('markdownH5', 'gray250', '', 'none')
-call s:HL('markdownH6', 'gray250', '', 'none')
+call s:HL('markdownH1', 'gray24', '', 'none')
+call s:HL('markdownH2', 'gray20', '', 'none')
+call s:HL('markdownH3', 'gray18', '', 'none')
+call s:HL('markdownH4', 'gray18', '', 'none')
+call s:HL('markdownH5', 'gray18', '', 'none')
+call s:HL('markdownH6', 'gray18', '', 'none')
 call s:HL('markdownLinkText', 'bmagenta', '', 'underline')
 call s:HL('markdownIdDeclaration', 'nmagenta')
 call s:HL('markdownAutomaticLink', 'nmagenta', '', 'none')
 call s:HL('markdownUrl', 'nmagenta', '', 'none')
-call s:HL('markdownUrldelimiter', 'gray245', '', 'none')
-" call s:HL('markdownLinkDelimiter', 'gray245', '', 'none')
-call s:HL('markdownLinkTextDelimiter', 'gray245', '', 'none')
+call s:HL('markdownUrldelimiter', 'gray13', '', 'none')
+" call s:HL('markdownLinkDelimiter', 'gray13', '', 'none')
+call s:HL('markdownLinkTextDelimiter', 'gray13', '', 'none')
 call s:HL('markdownCodeDelimiter', 'ncyan', '', 'none')
 call s:HL('markdownCode', 'nblue', '', 'none')
 call s:HL('markdownCodeBlock', 'ncyan', '', 'none')
@@ -667,14 +688,14 @@ call s:HL('pythonException',   'ngreen', '', 'bold')
 call s:HL('pythonExceptions',  'ngreen', '', 'none')
 call s:HL('pythonPrecondit',   'ngreen', '', 'none')
 call s:HL('pythonDecorator',   'nred', '', 'none')
-call s:HL('pythonRun',         'gray243', '', 'bold')
-call s:HL('pythonCoding',      'gray243', '', 'bold')
+call s:HL('pythonRun',         'gray11', '', 'bold')
+call s:HL('pythonCoding',      'gray11', '', 'bold')
 
 " }}}
 " SLIMV {{{
 
 " Rainbow parentheses
-call s:HL('hlLevel0', 'gray243')
+call s:HL('hlLevel0', 'gray11')
 call s:HL('hlLevel1', 'byellow')
 call s:HL('hlLevel2', 'bgreen')
 call s:HL('hlLevel3', 'bmagenta')
@@ -688,7 +709,7 @@ call s:HL('hlLevel9', 'byellow')
 " }}}
 " Vim {{{
 
-call s:HL('VimCommentTitle', 'gray245', '', 'bold')
+call s:HL('VimCommentTitle', 'gray13', '', 'bold')
 
 call s:HL('VimMapMod',    'bmagenta', '', 'none')
 call s:HL('VimMapModKey', 'bmagenta', '', 'none')
@@ -701,20 +722,20 @@ call s:HL('VimOption', 'ngreen', '', 'none')
 
 " sh {{{
 
-call s:HL('shDerefSimple', 'gray250', '')
-call s:HL('shFunctionKey', 'gray250', 'nocol', 'bold')
+call s:HL('shDerefSimple', 'gray18', '')
+call s:HL('shFunctionKey', 'gray18', 'nocol', 'bold')
 call s:HL('shFunction', 'nmagenta', 'nocol', '')
 call s:HL('shCommandSub', 'nocol', '', '')
 call s:HL('shCmdSubRegion', 'ngreen', '')
-call s:HL('shSpecial', 'gray250', '')
-call s:HL('shDeref', 'gray250', '')
+call s:HL('shSpecial', 'gray18', '')
+call s:HL('shDeref', 'gray18', '')
 
 " }}}
 
 " zsh {{{
 call s:HL('zshDeref', 'nmagenta', '')
 call s:HL('zshQuoted', 'nred', '')
-call s:HL('zshTypes', 'gray250', '')
+call s:HL('zshTypes', 'gray18', '')
 call s:HL('zshSubst', 'nmagenta', '')
 " }}}
 
