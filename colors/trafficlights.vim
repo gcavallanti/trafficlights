@@ -66,6 +66,7 @@ if &background == 'dark'
     let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
+    let s:bwc.ntest     = ['ff6666', 118]
 else
 
     let s:bwc.gray24  = ['ffffff', 231] "0
@@ -259,8 +260,6 @@ call s:HL('Comment',        'gray11')
 call s:HL('Todo',           'gray13', 'nocol', 'none')
 call s:HL('SpecialComment', 'gray24', 'nocol', 'bold')
 
-" Strings are a nice, pale straw color.  Nothing too fancy.
-call s:HL('String', 'nyellow')
 
 " Control flow stuff is nred.
 call s:HL('Statement',   'gray20', '', 'bold')
@@ -273,7 +272,7 @@ call s:HL('Repeat',      'gray18', '', 'bold')
 
 " Functions and variable declarations are orange, because gray18 looks weird.
 call s:HL('Identifier', 'gray18', '', 'none')
-call s:HL('Function',   'nmagenta', '', 'none')
+call s:HL('Function',   'nred', '', 'none')
 
 " Preprocessor stuff is ngreen, to make it pop.
 "
@@ -292,13 +291,15 @@ call s:HL('Constant',  'nmagenta', '', 'none')
 call s:HL('Character', 'nmagenta', '', 'none')
 call s:HL('Boolean',   'nmagenta', '', 'none')
 
-call s:HL('Number', 'nred', '', 'none')
+call s:HL('Number', 'nyellow', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
+
+call s:HL('String', 'ntest')
 
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
 
-call s:HL('Type', 'bmagenta', '', 'none')
+call s:HL('Type', 'nmagenta', '', 'none')
 call s:HL('StorageClass', 'nred', '', 'none')
 call s:HL('Structure', 'nred', '', 'none')
 call s:HL('Typedef', 'nred', '', 'none')
@@ -680,10 +681,10 @@ call s:HL('mysqlSpecial', 'bmagenta', '', 'bold')
 " Python {{{
 
 hi def link pythonOperator Operator
-call s:HL('pythonBuiltin',     'bmagenta')
-call s:HL('pythonBuiltinObj',  'bmagenta')
-call s:HL('pythonBuiltinFunc', 'bmagenta')
-call s:HL('pythonEscape',      'bmagenta')
+call s:HL('pythonBuiltin',     'nblue')
+call s:HL('pythonBuiltinObj',  'nblue')
+call s:HL('pythonBuiltinFunc', 'nblue')
+call s:HL('pythonEscape',      'nblue')
 call s:HL('pythonException',   'ngreen', '', 'bold')
 call s:HL('pythonExceptions',  'ngreen', '', 'none')
 call s:HL('pythonPrecondit',   'ngreen', '', 'none')
