@@ -272,7 +272,7 @@ call s:HL('Repeat',      'gray18', '', 'bold')
 
 " Functions and variable declarations are orange, because gray18 looks weird.
 call s:HL('Identifier', 'gray18', '', 'none')
-call s:HL('Function',   'nred', '', 'none')
+call s:HL('Function',   'nmagenta', '', 'none')
 
 " Preprocessor stuff is ngreen, to make it pop.
 "
@@ -291,10 +291,10 @@ call s:HL('Constant',  'nmagenta', '', 'none')
 call s:HL('Character', 'nmagenta', '', 'none')
 call s:HL('Boolean',   'nmagenta', '', 'none')
 
-call s:HL('Number', 'nyellow', '', 'none')
+call s:HL('Number', 'nred', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
 
-call s:HL('String', 'ntest')
+call s:HL('String', 'nyellow')
 
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
