@@ -57,7 +57,7 @@ if &background == 'dark'
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 112]
     let s:bwc.bgreen   = ['00ff00', 22]
-    let s:bwc.nblue    = ['6666ff', 69]
+    let s:bwc.nblue    = ['6666ff', 75]
     let s:bwc.bblue    = ['0066cc', 25]
     let s:bwc.nred     = ['ff6666', 203]
     let s:bwc.bred     = ['ff0000', 197]
@@ -86,14 +86,14 @@ else
     let s:bwc.gray01  = ['121212', 255] "23
     let s:bwc.gray00  = ['000000', 231] "24
 
-    let s:bwc.nyellow  = ['ffcc66', 209]
+    let s:bwc.nyellow  = ['ffcc66', 137]
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 34]
     let s:bwc.bgreen   = ['00ff00', 22]
-    let s:bwc.nblue    = ['6666ff', 69]
+    let s:bwc.nblue    = ['6666ff', 67]
     let s:bwc.bblue    = ['0066cc', 25]
-    let s:bwc.nred     = ['ff6666', 203]
-    let s:bwc.bred     = ['ff0000', 197]
+    let s:bwc.nred     = ['ff6666', 124]
+    let s:bwc.bred     = ['ff0000', 210]
     let s:bwc.nmagenta = ['9966ff', 56]
     let s:bwc.bmagenta = ['cc66ff', 169]
     let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
@@ -548,14 +548,14 @@ call s:HL('djangoVarBlock', 'byellow', '')
 
 " }}}
 " HTML {{{
-" call s:HL('htmlString',    'nmagenta', 'nocol', 'none')
+call s:HL('htmlString', 'nyellow', 'nocol', 'none')
 
 " Punctuation
-call s:HL('htmlTag',    'gray13', 'nocol', 'none')
-call s:HL('htmlEndTag', 'gray13', 'nocol', 'none')
+call s:HL('htmlTag',    'gray18', 'nocol', 'none')
+call s:HL('htmlEndTag', 'gray18', 'nocol', 'none')
 
 " Tag names
-call s:HL('htmlTagName',        'nred', '', 'none')
+call s:HL('htmlTagName',        'nred', '', 'bold')
 call s:HL('htmlTagN',        'gray18', '', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', '', 'none')
 call s:HL('htmlSpecialChar',    'nred',   '', 'none')
@@ -563,13 +563,13 @@ call s:HL('htmlSpecialChar',    'nred',   '', 'none')
 " Attributes
 call s:HL('htmlArg', 'gray13', '', 'none')
 
-call s:HL('htmlTitle', 'nyellow', '', 'none')
-call s:HL('htmlH1', 'gray20', '', 'bold')
-call s:HL('htmlH2', 'gray20', '', 'bold')
-call s:HL('htmlH3', 'gray20', '', 'none')
-call s:HL('htmlH4', 'gray20', '', 'none')
-call s:HL('htmlH5', 'nblue', '', 'none')
-call s:HL('htmlH6', 'nblue', '', 'none')
+call s:HL('htmlTitle', 'nblue', '', 'bold')
+call s:HL('htmlH1', 'nblue', '', 'bold')
+call s:HL('htmlH2', 'nblue', '', 'bold')
+call s:HL('htmlH3', 'nblue', '', 'bold')
+call s:HL('htmlH4', 'nblue', '', 'bold')
+call s:HL('htmlH5', 'nblue', '', 'bold')
+call s:HL('htmlH6', 'nblue', '', 'bold')
 
 " Stuff inside an <a> tag
 
