@@ -41,6 +41,8 @@ let s:bwc.gray245  = ['8a8a8a', 245]
 let s:bwc.gray243  = ['767676', 243]
 let s:bwc.gray241  = ['626262', 241]
 let s:bwc.gray240  = ['585858', 240]
+let s:bwc.gray239  = ['3a3a3a', 239]
+let s:bwc.gray238  = ['3a3a3a', 238]
 let s:bwc.gray237  = ['3a3a3a', 237]
 let s:bwc.gray236  = ['303030', 236]
 let s:bwc.gray235  = ['262626', 235]
@@ -49,9 +51,9 @@ let s:bwc.gray233  = ['121212', 233]
 let s:bwc.black    = ['000000', 232]
 
 let s:bwc.nyellow  = ['ffcc66', 222]
-let s:bwc.byellow  = ['ff0066', 173]
+let s:bwc.byellow  = ['ff0066', 220]
 let s:bwc.ngreen   = ['66cc00', 112]
-let s:bwc.bgreen   = ['00ff00', 154]
+let s:bwc.bgreen   = ['00ff00', 22]
 let s:bwc.nblue    = ['6666ff', 69]
 let s:bwc.bblue    = ['0066cc', 25]
 let s:bwc.nred     = ['ff6666', 203]
@@ -170,13 +172,13 @@ call s:HL('SpecialKey', 'gray237', 'nocol')
 call s:HL('Visual',    '',  'gray237')
 call s:HL('VisualNOS', '',  'gray237')
 
-call s:HL('Search',    'white', 'nmagenta', 'none')
-call s:HL('IncSearch', 'white', 'bred',    'none')
+call s:HL('Search',    'black', 'nyellow', 'none')
+call s:HL('IncSearch', 'black', 'byellow',    'none')
 
 call s:HL('Underlined', 'nocol', '', 'underline')
 
-call s:HL('StatusLine',   'gray233', 'test', 'none')
-call s:HL('StatusLineNC', 'gray233', 'test1', 'none')
+call s:HL('StatusLine',   'gray233', 'gray245', 'none')
+call s:HL('StatusLineNC', 'gray245', 'gray236', 'none')
 call s:HL('User1', 'gray234', 'test', 'none')
 " call s:HL('User1', 'nred', 'gray236', 'none')
 call s:HL('User2', 'gray241', 'gray236', 'none')
@@ -193,11 +195,11 @@ call s:HL('Directory', 'nblue', '', 'none')
 
 call s:HL('Title', 'ngreen')
 
-call s:HL('ErrorMsg',   'nred',       'nocol', 'none')
-call s:HL('MoreMsg',    'nyellow',   '',   'none')
-call s:HL('ModeMsg',    'bgreen', '',   'none')
-call s:HL('Question',   'byellow', '',   'none')
-call s:HL('WarningMsg', 'bmagenta',       '',   'none')
+call s:HL('ErrorMsg', 'nred', 'nocol', 'none')
+call s:HL('MoreMsg', 'nyellow', '', 'none')
+call s:HL('ModeMsg', 'ngreen', '', 'none')
+call s:HL('Question', 'nblue', '', 'none')
+call s:HL('WarningMsg', 'nmagenta', '', 'none')
 
 " This is a ctags tag, not an HTML one.  'Something you can use c-] on'.
 call s:HL('Tag', '', '', 'bold')
@@ -209,7 +211,7 @@ call s:HL('Tag', '', '', 'bold')
 " Gutter {{{
 
 call s:HL('CursorLineNr',     'gray245', s:gutter)
-call s:HL('LineNr',     'gray237', s:gutter)
+call s:HL('LineNr',     'gray235', s:gutter)
 " call s:HL('LineNr',     'gray237', '', '')
 " call 'hi SignColumn guifg=#000000 ctermfg=240 guibg=#000000 ctermbg=233 term=none'
 " hi SignColumn guifg=#000000 ctermfg=140 guibg=#000000 ctermbg='' term=none
@@ -308,9 +310,9 @@ call s:HL('PmenuThumb', 'gray252')
 " call s:HL('DiffChange', '',     'gray235')
 " call s:HL('DiffText',   'nocol', 'gray237', 'none')
 
-call s:HL('DiffDelete', 'gray235', 'nocol')
-call s:HL('DiffAdd',    'gray250',     'bblue')
-call s:HL('DiffChange', '',     'bblue')
+call s:HL('DiffDelete', 'nred', 'bred')
+call s:HL('DiffAdd',    'ngreen',     'bgreen')
+call s:HL('DiffChange', 'nblue',     'bblue')
 call s:HL('DiffText',   'gray255', 'nblue', 'none')
 
 " }}}
@@ -508,11 +510,11 @@ call s:HL('gitDiff', 'gray245', '',)
 
 call s:HL('diffRemoved', 'nred', '',)
 call s:HL('diffAdded', 'ngreen', '',)
-call s:HL('diffFile', 'black', 'nred', 'bold')
-call s:HL('diffNewFile', 'black', 'nred', 'bold')
+call s:HL('diffFile', 'nyellow', '', '')
+call s:HL('diffNewFile', 'nyellow', '', '')
 
-call s:HL('diffLine', 'nyellow', 'nocol', 'none')
-call s:HL('diffSubname', 'byellow', '', 'none')
+call s:HL('diffLine', 'nyellow', '', '')
+call s:HL('diffSubname', 'byellow', '', '')
 
 " }}}
 " Django Templates {{{
@@ -714,6 +716,12 @@ call s:HL('zshDeref', 'nmagenta', '')
 call s:HL('zshQuoted', 'nred', '')
 call s:HL('zshTypes', 'gray250', '')
 call s:HL('zshSubst', 'nmagenta', '')
+" }}}
+
+" quickfix {{{
+call s:HL('qfFilename', 'nmagenta', '')
+call s:HL('qfSeparator', 'nocol', '')
+call s:HL('qfLineNr', 'bmagenta', '')
 " }}}
 
 " }}}
