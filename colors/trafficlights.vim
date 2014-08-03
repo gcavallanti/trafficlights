@@ -66,7 +66,8 @@ if &background == 'dark'
     let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
-    let s:bwc.ntest     = ['ff6666', 118]
+    " let s:bwc.ntest     = ['ff6666', 112]
+    let s:bwc.ntest     = ['ff6666', 134]
 else
 
     let s:bwc.gray24  = ['ffffff', 231] "0
@@ -91,15 +92,16 @@ else
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 34]
     let s:bwc.bgreen   = ['00ff00', 22]
-    let s:bwc.nblue    = ['6666ff', 67]
+    let s:bwc.nblue    = ['6666ff', 25]
     let s:bwc.bblue    = ['0066cc', 25]
     let s:bwc.nred     = ['ff6666', 124]
     let s:bwc.bred     = ['ff0000', 210]
     let s:bwc.nmagenta = ['9966ff', 56]
     let s:bwc.bmagenta = ['cc66ff', 169]
-    let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
+    let s:bwc.ncyan    = ['66ccff', 30]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
+    let s:bwc.ntest     = ['ff6666', 125]
 endif
 " }}}
 
@@ -171,7 +173,7 @@ endif
 " General/UI {{{
 
 " call 'hi Normal ctermbg=NONE'
-call s:HL('Normal', 'gray18', '', 'none')
+call s:HL('Normal', 'gray20', '', 'none')
 
 call s:HL('Folded', 'gray09', 'nocol', 'none')
 
@@ -263,11 +265,11 @@ call s:HL('SpecialComment', 'gray24', 'nocol', 'bold')
 
 " Control flow stuff is nred.
 call s:HL('Statement',   'gray20', '', 'bold')
-call s:HL('Keyword',     'gray18', '', 'bold')
-call s:HL('Conditional', 'gray18', '', 'bold')
-call s:HL('Operator',    'gray18', '', 'bold')
-call s:HL('Label',       'gray18', '', 'bold')
-call s:HL('Repeat',      'gray18', '', 'bold')
+call s:HL('Keyword',     'gray20', '', 'bold')
+call s:HL('Conditional', 'gray20', '', 'bold')
+call s:HL('Operator',    'gray20', '', 'bold')
+call s:HL('Label',       'gray20', '', 'bold')
+call s:HL('Repeat',      'gray20', '', 'bold')
 
 
 " Functions and variable declarations are orange, because gray18 looks weird.
@@ -287,11 +289,11 @@ call s:HL('PreCondit', 'ngreen', '', 'none')
 
 " Constants of all kinds are colored together.
 " I'm not really happy with the color yet...
-call s:HL('Constant',  'nmagenta', '', 'none')
+call s:HL('Constant',  'nblue', '', 'none')
 call s:HL('Character', 'nmagenta', '', 'none')
 call s:HL('Boolean',   'nmagenta', '', 'none')
 
-call s:HL('Number', 'nyellow', '', 'none')
+call s:HL('Number', 'ncyan', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
 
 call s:HL('String', 'ntest')
@@ -299,7 +301,7 @@ call s:HL('String', 'ntest')
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
 
-call s:HL('Type', 'nmagenta', '', 'none')
+call s:HL('Type', 'nblue', '', 'none')
 call s:HL('StorageClass', 'nred', '', 'none')
 call s:HL('Structure', 'nred', '', 'none')
 call s:HL('Typedef', 'nred', '', 'none')
@@ -549,28 +551,28 @@ call s:HL('djangoVarBlock', 'byellow', '')
 
 " }}}
 " HTML {{{
-call s:HL('htmlString', 'nyellow', 'nocol', 'none')
+call s:HL('htmlString', 'ntest', 'nocol', 'none')
 
 " Punctuation
 call s:HL('htmlTag',    'gray18', 'nocol', 'none')
 call s:HL('htmlEndTag', 'gray18', 'nocol', 'none')
 
 " Tag names
-call s:HL('htmlTagName',        'nred', '', 'bold')
+call s:HL('htmlTagName',        'nblue', '', 'none')
 call s:HL('htmlTagN',        'gray18', '', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', '', 'none')
 call s:HL('htmlSpecialChar',    'nred',   '', 'none')
 
 " Attributes
-call s:HL('htmlArg', 'gray13', '', 'none')
+call s:HL('htmlArg', 'ncyan', '', 'none')
 
-call s:HL('htmlTitle', 'nblue', '', 'bold')
-call s:HL('htmlH1', 'nblue', '', 'bold')
-call s:HL('htmlH2', 'nblue', '', 'bold')
-call s:HL('htmlH3', 'nblue', '', 'bold')
-call s:HL('htmlH4', 'nblue', '', 'bold')
-call s:HL('htmlH5', 'nblue', '', 'bold')
-call s:HL('htmlH6', 'nblue', '', 'bold')
+call s:HL('htmlTitle', 'gray18', '', 'none')
+call s:HL('htmlH1', 'gray18', '', 'none')
+call s:HL('htmlH2', 'gray18', '', 'none')
+call s:HL('htmlH3', 'gray18', '', 'none')
+call s:HL('htmlH4', 'gray18', '', 'none')
+call s:HL('htmlH5', 'gray18', '', 'none')
+call s:HL('htmlH6', 'gray18', '', 'none')
 
 " Stuff inside an <a> tag
 
