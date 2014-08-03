@@ -60,14 +60,14 @@ if &background == 'dark'
     let s:bwc.nblue    = ['6666ff', 75]
     let s:bwc.bblue    = ['0066cc', 25]
     let s:bwc.nred     = ['ff6666', 203]
-    let s:bwc.bred     = ['ff0000', 197]
+    let s:bwc.bred     = ['ff0000', 161]
     let s:bwc.nmagenta = ['9966ff', 99]
     let s:bwc.bmagenta = ['cc66ff', 134]
     let s:bwc.ncyan    = ['66ccff', 117]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
-    " let s:bwc.ntest     = ['ff6666', 112]
-    let s:bwc.ntest     = ['ff6666', 134]
+    " let s:bwc.ntest     = ['ff6666', 222]
+    " let s:bwc.ntest     = ['ff6666', 134]
 else
 
     let s:bwc.gray24  = ['ffffff', 231] "0
@@ -88,20 +88,24 @@ else
     let s:bwc.gray01  = ['121212', 255] "23
     let s:bwc.gray00  = ['000000', 231] "24
 
-    let s:bwc.nyellow  = ['ffcc66', 137]
-    let s:bwc.byellow  = ['ff0066', 220]
-    let s:bwc.ngreen   = ['66cc00', 34]
-    let s:bwc.bgreen   = ['00ff00', 22]
+    let s:bwc.nyellow  = ['ffcc66', 124]
+    let s:bwc.byellow  = ['ff0066', 208]
+    let s:bwc.ngreen   = ['66cc00', 28]
+    let s:bwc.bgreen   = ['00ff00', 157]
     let s:bwc.nblue    = ['6666ff', 25]
-    let s:bwc.bblue    = ['0066cc', 25]
-    let s:bwc.nred     = ['ff6666', 124]
-    let s:bwc.bred     = ['ff0000', 210]
-    let s:bwc.nmagenta = ['9966ff', 56]
-    let s:bwc.bmagenta = ['cc66ff', 169]
+    let s:bwc.bblue    = ['0066cc', 75]
+    let s:bwc.nred     = ['ff6666', 88]
+    let s:bwc.bred     = ['ff0000', 217]
+    let s:bwc.nmagenta = ['9966ff', 165]
+    let s:bwc.bmagenta = ['cc66ff', 183]
     let s:bwc.ncyan    = ['66ccff', 30]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
-    let s:bwc.ntest     = ['ff6666', 125]
+    " let s:bwc.ntest     = ['ff6666', 94]
+    " let s:bwc.ntest     = ['ff6666', 94]
+    " let s:bwc.ntest     = ['ff6666', 15]
+    " let s:bwc.ntest     = ['ff6666', 166]
+    " let s:bwc.ntest     = ['ff6666', 124]
 endif
 " }}}
 
@@ -144,7 +148,7 @@ endfunction
 " Configuration Options {{{
 
 if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
-    let s:gutter = 'gray01'
+    let s:gutter = 'gray02'
 else
     let s:gutter = 'nocol'
 endif
@@ -180,7 +184,12 @@ call s:HL('Folded', 'gray09', 'nocol', 'none')
 call s:HL('VertSplit', 'gray03', 'nocol', 'none')
 " call s:HL('VertSplit', 'gray13', 'nocol', 'none')
 
-call s:HL('CursorLine',   '', 'gray02', 'none')
+if &background == 'dark'
+    call s:HL('CursorLine',   '', 'gray02', 'none')
+else
+    call s:HL('CursorLine',   '', 'gray01', 'none')
+endif
+    
 call s:HL('CursorColumn', '', 'gray02')
 call s:HL('ColorColumn',  '', 'gray02')
 
@@ -196,13 +205,25 @@ call s:HL('SpecialKey', 'gray05', 'nocol')
 call s:HL('Visual',    '',  'gray05')
 call s:HL('VisualNOS', '',  'gray05')
 
-call s:HL('Search',    'gray00', 'nyellow', 'none')
-call s:HL('IncSearch', 'gray00', 'byellow',    'none')
+if &background == 'dark'
+    " call s:HL('Search',    'gray00', 'nyellow', 'none')
+    " call s:HL('IncSearch', 'gray00', 'byellow',    'none')
+    call s:HL('Search',    'gray01', 'gray13', 'none')
+    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
+else
+    call s:HL('Search',    'gray01', 'gray13', 'none')
+    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
+endif
 
 call s:HL('Underlined', 'nocol', '', 'underline')
 
-call s:HL('StatusLine',   'gray01', 'gray13', 'none')
-call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
+if &background == 'dark'
+    call s:HL('StatusLine',   'gray01', 'gray13', 'none')
+    call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
+else
+    call s:HL('StatusLine',   'gray23', 'gray07', 'none')
+    call s:HL('StatusLineNC', 'gray11', 'gray03', 'none')
+endif
 call s:HL('User1', 'gray02', 'gray10', 'none')
 " call s:HL('User1', 'nred', 'gray04', 'none')
 call s:HL('User2', 'gray09', 'gray04', 'none')
@@ -235,7 +256,11 @@ call s:HL('Tag', '', '', 'bold')
 " Gutter {{{
 
 call s:HL('CursorLineNr',     'gray13', s:gutter)
-call s:HL('LineNr',     'gray03', s:gutter)
+if &background == 'dark'
+    call s:HL('LineNr',     'gray04', s:gutter)
+else
+    call s:HL('LineNr',     'gray06', s:gutter)
+endif
 " call s:HL('LineNr',     'gray05', '', '')
 " call 'hi SignColumn guifg=#000000 ctermfg=240 guibg=#000000 ctermbg=233 term=none'
 " hi SignColumn guifg=#000000 ctermfg=140 guibg=#000000 ctermbg='' term=none
@@ -296,7 +321,7 @@ call s:HL('Boolean',   'nmagenta', '', 'none')
 call s:HL('Number', 'ncyan', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
 
-call s:HL('String', 'ntest')
+call s:HL('String', 'nyellow')
 
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
@@ -337,7 +362,7 @@ call s:HL('PmenuThumb', 'gray20')
 call s:HL('DiffDelete', 'nred', 'bred')
 call s:HL('DiffAdd',    'ngreen',     'bgreen')
 call s:HL('DiffChange', 'nblue',     'bblue')
-call s:HL('DiffText',   'gray23', 'nblue', 'none')
+call s:HL('DiffText',   'gray24', 'nblue', 'none')
 
 " }}}
 " Netrw {{{
@@ -551,7 +576,7 @@ call s:HL('djangoVarBlock', 'byellow', '')
 
 " }}}
 " HTML {{{
-call s:HL('htmlString', 'ntest', 'nocol', 'none')
+" call s:HL('htmlString', 'ntest', 'nocol', 'none')
 
 " Punctuation
 call s:HL('htmlTag',    'gray18', 'nocol', 'none')
@@ -690,6 +715,7 @@ call s:HL('pythonEscape',      'nblue')
 call s:HL('pythonException',   'ngreen', '', 'bold')
 call s:HL('pythonExceptions',  'ngreen', '', 'none')
 call s:HL('pythonPrecondit',   'ngreen', '', 'none')
+call s:HL('pythonInclude', 'gray20', '', 'bold')
 call s:HL('pythonDecorator',   'nred', '', 'none')
 call s:HL('pythonRun',         'gray11', '', 'bold')
 call s:HL('pythonCoding',      'gray11', '', 'bold')
@@ -714,12 +740,12 @@ call s:HL('hlLevel9', 'byellow')
 
 call s:HL('VimCommentTitle', 'gray13', '', 'bold')
 
-call s:HL('VimMapMod',    'bmagenta', '', 'none')
-call s:HL('VimMapModKey', 'bmagenta', '', 'none')
-call s:HL('VimNotation', 'bmagenta', '', 'none')
-call s:HL('VimBracket', 'bmagenta', '', 'none')
+call s:HL('VimMapMod',    'gray20', '', 'none')
+call s:HL('VimMapModKey', 'gray20', '', 'bold')
+call s:HL('VimNotation', 'gray20', '', 'none')
+call s:HL('VimBracket', 'gray20', '', 'none')
 call s:HL('VimParenSep', 'nocol', '', 'none')
-call s:HL('VimOption', 'ngreen', '', 'none')
+call s:HL('VimOption', 'nblue', '', 'none')
 
 " }}}
 
