@@ -67,7 +67,9 @@ if &background == 'dark'
     let s:bwc.bcyan    = ['66ffff', 80]
 
     " let s:bwc.ntest     = ['ff6666', 222]
-    " let s:bwc.ntest     = ['ff6666', 134]
+    let s:bwc.ntest     = ['ff6666', 134]
+    let s:bwc.ntest     = ['ff6666', 15]
+    let s:bwc.ntest     = ['ff6666', 221]
 else
 
     let s:bwc.gray24  = ['ffffff', 231] "0
@@ -88,7 +90,7 @@ else
     let s:bwc.gray01  = ['121212', 255] "23
     let s:bwc.gray00  = ['000000', 231] "24
 
-    let s:bwc.nyellow  = ['ffcc66', 124]
+    let s:bwc.nyellow  = ['ffcc66', 160]
     let s:bwc.byellow  = ['ff0066', 208]
     let s:bwc.ngreen   = ['66cc00', 28]
     let s:bwc.bgreen   = ['00ff00', 157]
@@ -98,12 +100,13 @@ else
     let s:bwc.bred     = ['ff0000', 217]
     let s:bwc.nmagenta = ['9966ff', 165]
     let s:bwc.bmagenta = ['cc66ff', 183]
-    let s:bwc.ncyan    = ['66ccff', 30]  "74 alt
+    let s:bwc.ncyan    = ['66ccff', 25]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
     " let s:bwc.ntest     = ['ff6666', 94]
     " let s:bwc.ntest     = ['ff6666', 94]
-    " let s:bwc.ntest     = ['ff6666', 15]
+    let s:bwc.ntest     = ['ff6666', 15]
+    let s:bwc.ntest     = ['ff6666', 130]
     " let s:bwc.ntest     = ['ff6666', 166]
     " let s:bwc.ntest     = ['ff6666', 124]
 endif
@@ -209,10 +212,10 @@ if &background == 'dark'
     " call s:HL('Search',    'gray00', 'nyellow', 'none')
     " call s:HL('IncSearch', 'gray00', 'byellow',    'none')
     call s:HL('Search',    'gray01', 'gray13', 'none')
-    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
+    call s:HL('IncSearch', 'gray00', 'byellow',    'none')
 else
     call s:HL('Search',    'gray01', 'gray13', 'none')
-    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
+    call s:HL('IncSearch', 'gray00', 'nyellow',    'none')
 endif
 
 call s:HL('Underlined', 'nocol', '', 'underline')
@@ -221,8 +224,8 @@ if &background == 'dark'
     call s:HL('StatusLine',   'gray01', 'gray13', 'none')
     call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 else
-    call s:HL('StatusLine',   'gray23', 'gray07', 'none')
-    call s:HL('StatusLineNC', 'gray11', 'gray03', 'none')
+    call s:HL('StatusLine',   'gray23', 'gray08', 'none')
+    call s:HL('StatusLineNC', 'gray23', 'gray13', 'none')
 endif
 call s:HL('User1', 'gray02', 'gray10', 'none')
 " call s:HL('User1', 'nred', 'gray04', 'none')
@@ -299,7 +302,7 @@ call s:HL('Repeat',      'gray20', '', 'bold')
 
 " Functions and variable declarations are orange, because gray18 looks weird.
 call s:HL('Identifier', 'gray18', '', 'none')
-call s:HL('Function',   'nred', '', 'none')
+call s:HL('Function',   'nred', '', 'bold')
 
 " Preprocessor stuff is ngreen, to make it pop.
 "
@@ -321,7 +324,7 @@ call s:HL('Boolean',   'nmagenta', '', 'none')
 call s:HL('Number', 'ncyan', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
 
-call s:HL('String', 'nyellow')
+call s:HL('String', 'ntest', '', 'none')
 
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
