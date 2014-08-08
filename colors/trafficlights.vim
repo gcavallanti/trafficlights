@@ -53,7 +53,7 @@ if &background == 'dark'
     let s:bwc.gray01  = ['121212', 233]
     let s:bwc.gray00  = ['000000', 232]
 
-    let s:bwc.nyellow  = ['ffcc66', 222]
+    let s:bwc.nyellow  = ['ffcc66', 221]
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 112]
     let s:bwc.bgreen   = ['00ff00', 22]
@@ -67,12 +67,12 @@ if &background == 'dark'
     let s:bwc.bcyan    = ['66ffff', 80]
 
     " let s:bwc.ntest     = ['ff6666', 222]
-    let s:bwc.ntest     = ['ff6666', 134]
-    let s:bwc.ntest     = ['ff6666', 15]
-    let s:bwc.ntest     = ['ff6666', 221]
+    " let s:bwc.ntest     = ['ff6666', 134]
+    " let s:bwc.ntest     = ['ff6666', 15]
+    " let s:bwc.ntest     = ['ff6666', 221]
 else
 
-    let s:bwc.gray24  = ['ffffff', 231] "0
+    let s:bwc.gray24  = ['ffffff', 232] "0
     let s:bwc.gray23  = ['eeeeee', 233] "1
     let s:bwc.gray20  = ['d0d0d0', 236] "4
     let s:bwc.gray18  = ['bcbcbc', 238] "6
@@ -90,25 +90,26 @@ else
     let s:bwc.gray01  = ['121212', 255] "23
     let s:bwc.gray00  = ['000000', 231] "24
 
-    let s:bwc.nyellow  = ['ffcc66', 160]
-    let s:bwc.byellow  = ['ff0066', 208]
-    let s:bwc.ngreen   = ['66cc00', 28]
+    let s:bwc.nyellow  = ['ffcc66', 94]
+    let s:bwc.byellow  = ['ff0066', 230]
+    let s:bwc.ngreen   = ['66cc00', 22]
     let s:bwc.bgreen   = ['00ff00', 157]
     let s:bwc.nblue    = ['6666ff', 25]
     let s:bwc.bblue    = ['0066cc', 75]
     let s:bwc.nred     = ['ff6666', 88]
     let s:bwc.bred     = ['ff0000', 217]
-    let s:bwc.nmagenta = ['9966ff', 165]
-    let s:bwc.bmagenta = ['cc66ff', 183]
-    let s:bwc.ncyan    = ['66ccff', 25]  "74 alt
+    let s:bwc.nmagenta = ['9966ff', 52] "was 89
+    let s:bwc.bmagenta = ['cc66ff', 225]
+    let s:bwc.ncyan    = ['66ccff', 23]  "74 alt
     let s:bwc.bcyan    = ['66ffff', 80]
 
     " let s:bwc.ntest     = ['ff6666', 94]
     " let s:bwc.ntest     = ['ff6666', 94]
-    let s:bwc.ntest     = ['ff6666', 15]
-    let s:bwc.ntest     = ['ff6666', 130]
+    " let s:bwc.ntest     = ['ff6666', 15]
+    " let s:bwc.ntest     = ['ff6666', 130]
     " let s:bwc.ntest     = ['ff6666', 166]
     " let s:bwc.ntest     = ['ff6666', 124]
+    " let s:bwc.btest     = ['ff6666', 230]
 endif
 " }}}
 
@@ -151,25 +152,9 @@ endfunction
 " Configuration Options {{{
 
 if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
-    let s:gutter = 'gray02'
+    let s:gutter = 'gray04'
 else
     let s:gutter = 'nocol'
-endif
-
-if exists('g:trafficlights_tabline')
-    if g:trafficlights_tabline == 0
-        let s:tabline = 'gray01'
-    elseif  g:trafficlights_tabline == 1
-        let s:tabline = 'gray02'
-    elseif  g:trafficlights_tabline == 2
-        let s:tabline = 'gray03'
-    elseif  g:trafficlights_tabline == 3
-        let s:tabline = 'gray08'
-    else
-        let s:tabline = 'gray01'
-    endif
-else
-    let s:tabline = 'gray02'
 endif
 
 " }}}
@@ -190,7 +175,7 @@ call s:HL('VertSplit', 'gray03', 'nocol', 'none')
 if &background == 'dark'
     call s:HL('CursorLine',   '', 'gray02', 'none')
 else
-    call s:HL('CursorLine',   '', 'gray01', 'none')
+    call s:HL('CursorLine',   '', 'gray02', 'none')
 endif
     
 call s:HL('CursorColumn', '', 'gray02')
@@ -200,7 +185,7 @@ call s:HL('TabLine', 'gray03', 'gray08', 'none')
 call s:HL('TabLineFill', 'gray18', 'nocol', 'none')
 call s:HL('TabLineSel', 'gray01', 'gray13', 'none')
 
-call s:HL('MatchParen', 'gray20', 'gray08', 'bold')
+call s:HL('MatchParen', 'gray02', 'gray20', 'bold')
 
 call s:HL('NonText',    'gray05', 'nocol')
 call s:HL('SpecialKey', 'gray05', 'nocol')
@@ -212,10 +197,10 @@ if &background == 'dark'
     " call s:HL('Search',    'gray00', 'nyellow', 'none')
     " call s:HL('IncSearch', 'gray00', 'byellow',    'none')
     call s:HL('Search',    'gray01', 'gray13', 'none')
-    call s:HL('IncSearch', 'gray00', 'byellow',    'none')
+    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
 else
     call s:HL('Search',    'gray01', 'gray13', 'none')
-    call s:HL('IncSearch', 'gray00', 'nyellow',    'none')
+    call s:HL('IncSearch', 'gray00', 'nmagenta',    'none')
 endif
 
 call s:HL('Underlined', 'nocol', '', 'underline')
@@ -224,8 +209,10 @@ if &background == 'dark'
     call s:HL('StatusLine',   'gray01', 'gray13', 'none')
     call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 else
-    call s:HL('StatusLine',   'gray23', 'gray08', 'none')
-    call s:HL('StatusLineNC', 'gray23', 'gray13', 'none')
+    call s:HL('StatusLine',   'gray18', 'gray07', 'none')
+    call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
+    " call s:HL('StatusLine',   'gray23', 'gray07', 'none')
+    " call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 endif
 call s:HL('User1', 'gray02', 'gray10', 'none')
 " call s:HL('User1', 'nred', 'gray04', 'none')
@@ -251,18 +238,14 @@ call s:HL('WarningMsg', 'nmagenta', '', 'none')
 
 " This is a ctags tag, not an HTML one.  'Something you can use c-] on'.
 call s:HL('Tag', '', '', 'bold')
-
-" hi IndentGuides                  guibg=#373737
-" hi WildMenu        guifg=#66D9EF guibg=#000000
-
 " }}}
-" Gutter {{{
 
-call s:HL('CursorLineNr',     'gray13', s:gutter)
+" Gutter {{{
+call s:HL('CursorLineNr',     'gray18', s:gutter)
 if &background == 'dark'
     call s:HL('LineNr',     'gray04', s:gutter)
 else
-    call s:HL('LineNr',     'gray06', s:gutter)
+    call s:HL('LineNr',     'gray13', s:gutter)
 endif
 " call s:HL('LineNr',     'gray05', '', '')
 " call 'hi SignColumn guifg=#000000 ctermfg=240 guibg=#000000 ctermbg=233 term=none'
@@ -271,8 +254,8 @@ endif
 call s:HL('SignColumn', 'nocol', 'nocol', '')
 " hi SignColumn ctermbg=none
 call s:HL('FoldColumn', 'gray09', 'nocol', '')
-
 " }}}
+
 " Cursor {{{
 
 call s:HL('Cursor',  'gray00', 'nblue', 'bold')
@@ -302,7 +285,11 @@ call s:HL('Repeat',      'gray20', '', 'bold')
 
 " Functions and variable declarations are orange, because gray18 looks weird.
 call s:HL('Identifier', 'gray18', '', 'none')
-call s:HL('Function',   'nred', '', 'bold')
+if &background == 'dark'
+    call s:HL('Function',   'nred', '', 'none')
+else
+    call s:HL('Function',   'nred', '', 'bold')
+endif
 
 " Preprocessor stuff is ngreen, to make it pop.
 "
@@ -310,7 +297,7 @@ call s:HL('Function',   'nred', '', 'bold')
 " grouped together at the beginning of a file.  If they're in the middle of some
 " other code they should stand out, because something tricky is
 " probably going on.
-call s:HL('PreProc',   'ngreen', '', 'none')
+call s:HL('PreProc',   'gray18', '', 'none')
 call s:HL('Macro',     'ngreen', '', 'none')
 call s:HL('Define',    'ngreen', '', 'none')
 call s:HL('PreCondit', 'ngreen', '', 'none')
@@ -321,10 +308,10 @@ call s:HL('Constant',  'nblue', '', 'none')
 call s:HL('Character', 'nmagenta', '', 'none')
 call s:HL('Boolean',   'nmagenta', '', 'none')
 
-call s:HL('Number', 'ncyan', '', 'none')
+call s:HL('Number', 'nmagenta', '', 'none')
 call s:HL('Float',  'nred', '', 'none')
 
-call s:HL('String', 'ntest', '', 'none')
+call s:HL('String', 'nyellow', '', 'none')
 
 " Not sure what 'special character in a constant' means, but let's make it pop.
 call s:HL('SpecialChar', 'bmagenta', '', 'none')
@@ -365,7 +352,11 @@ call s:HL('PmenuThumb', 'gray20')
 call s:HL('DiffDelete', 'nred', 'bred')
 call s:HL('DiffAdd',    'ngreen',     'bgreen')
 call s:HL('DiffChange', 'nblue',     'bblue')
-call s:HL('DiffText',   'gray24', 'nblue', 'none')
+if &background == 'dark'
+    call s:HL('DiffText',   'gray24', 'nblue', 'none')
+else
+    call s:HL('DiffText',   'gray00', 'nblue', 'none')
+endif
 
 " }}}
 " Netrw {{{
@@ -480,8 +471,8 @@ call s:HL('ShowMarksHLm', 'nblue', 'gray01')
 " }}}
 " ShowMarks {{{
 
-call s:HL('IndentGuidesOdd', 'gray08', 'nocol')
-call s:HL('IndentGuidesEven', 'gray18', 'gray02')
+call s:HL('IndentGuidesOdd', 'gray11', 'nocol')
+call s:HL('IndentGuidesEven', 'gray02', 'gray03')
 
 " }}}
 " ShowMarks {{{
@@ -579,14 +570,14 @@ call s:HL('djangoVarBlock', 'byellow', '')
 
 " }}}
 " HTML {{{
-" call s:HL('htmlString', 'ntest', 'nocol', 'none')
+" call s:HL('htmlString', 'nmagenta', 'nocol', 'none')
 
 " Punctuation
 call s:HL('htmlTag',    'gray18', 'nocol', 'none')
 call s:HL('htmlEndTag', 'gray18', 'nocol', 'none')
 
 " Tag names
-call s:HL('htmlTagName',        'nblue', '', 'none')
+call s:HL('htmlTagName',        'nred', '', 'none')
 call s:HL('htmlTagN',        'gray18', '', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', '', 'none')
 call s:HL('htmlSpecialChar',    'nred',   '', 'none')
@@ -594,13 +585,13 @@ call s:HL('htmlSpecialChar',    'nred',   '', 'none')
 " Attributes
 call s:HL('htmlArg', 'ncyan', '', 'none')
 
-call s:HL('htmlTitle', 'gray18', '', 'none')
-call s:HL('htmlH1', 'gray18', '', 'none')
-call s:HL('htmlH2', 'gray18', '', 'none')
-call s:HL('htmlH3', 'gray18', '', 'none')
-call s:HL('htmlH4', 'gray18', '', 'none')
-call s:HL('htmlH5', 'gray18', '', 'none')
-call s:HL('htmlH6', 'gray18', '', 'none')
+call s:HL('htmlTitle', 'gray20', '', 'none')
+call s:HL('htmlH1', 'gray20', '', 'none')
+call s:HL('htmlH2', 'gray20', '', 'none')
+call s:HL('htmlH3', 'gray20', '', 'none')
+call s:HL('htmlH4', 'gray20', '', 'none')
+call s:HL('htmlH5', 'gray20', '', 'none')
+call s:HL('htmlH6', 'gray20', '', 'none')
 
 " Stuff inside an <a> tag
 
@@ -614,13 +605,17 @@ endif
 " Java {{{
 
 call s:HL('javaClassDecl', 'nmagenta', '', 'none')
-call s:HL('javaScopeDecl', 'nmagenta', '', 'none')
+call s:HL('javaScopeDecl', 'gray20', '', 'bold')
 call s:HL('javaCommentTitle', 'gray11', '')
-call s:HL('javaDocTags', 'gray24', '', 'none')
-call s:HL('javaDocParam', 'nyellow', '', '')
+call s:HL('javaDocTags', 'gray10', '', 'none')
+call s:HL('javaDocParam', 'gray18', '', '')
 call s:HL('javaStorageClass', 'nmagenta', '', '')
 call s:HL('javaAnnotation', 'nmagenta', '', '')
-call s:HL('javaTypedef', 'ngreen', '', '')
+call s:HL('javaTypedef', 'ncyan', '', '')
+call s:HL('javaType', 'nblue', '', 'none')
+call s:HL('javaBraces', 'gray18', '', '')
+call s:HL('javaExternal', 'ngreen', '', '')
+call s:HL('javaSpecialChar', 'ngreen', '', '')
 
 " }}}
 " LaTeX {{{
@@ -718,12 +713,23 @@ call s:HL('pythonEscape',      'nblue')
 call s:HL('pythonException',   'ngreen', '', 'bold')
 call s:HL('pythonExceptions',  'ngreen', '', 'none')
 call s:HL('pythonPrecondit',   'ngreen', '', 'none')
-call s:HL('pythonInclude', 'gray20', '', 'bold')
+call s:HL('pythonInclude', 'ngreen', '', 'none')
 call s:HL('pythonDecorator',   'nred', '', 'none')
 call s:HL('pythonRun',         'gray11', '', 'bold')
 call s:HL('pythonCoding',      'gray11', '', 'bold')
 
 " }}}
+
+" Ruby {{{
+call s:HL('rubyBlock',     'gray20', '', 'bold')
+call s:HL('rubyClass',     'gray20', '', 'bold')
+call s:HL('rubyModule',     'gray20', '', 'bold')
+call s:HL('rubyInclude',     'gray20', '', 'bold')
+call s:HL('rubyDefine',     'gray20', '', 'bold')
+call s:HL('rubyConstant',     'ncyan', '', 'none')
+call s:HL('rubyPseudoVariable',     'nblue', '', 'none')
+" }}}
+
 " SLIMV {{{
 
 " Rainbow parentheses
