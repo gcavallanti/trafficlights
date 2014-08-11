@@ -34,6 +34,7 @@ if &background == 'dark'
     let s:bwc.gray23  = ['eeeeee', 255]
     let s:bwc.gray20  = ['d0d0d0', 252]
     let s:bwc.gray18  = ['bcbcbc', 250]
+    let s:bwc.gray15  = ['bcbcbc', 247]
     let s:bwc.gray13  = ['8a8a8a', 245]
     let s:bwc.gray11  = ['767676', 243]
     let s:bwc.gray10  = ['626262', 242]
@@ -48,7 +49,7 @@ if &background == 'dark'
     let s:bwc.gray01  = ['121212', 233]
     let s:bwc.gray00  = ['000000', 232]
 
-    let s:bwc.nyellow  = ['ffcc66', 222]
+    let s:bwc.nyellow  = ['ffcc66', 221]
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 112]
     let s:bwc.bgreen   = ['00ff00', 22]
@@ -72,6 +73,7 @@ else
     let s:bwc.gray23  = ['eeeeee', 233] "1
     let s:bwc.gray20  = ['d0d0d0', 236] "4
     let s:bwc.gray18  = ['bcbcbc', 238] "6
+    let s:bwc.gray15  = ['bcbcbc', 241] "6
     let s:bwc.gray13  = ['8a8a8a', 243] "11
     let s:bwc.gray11  = ['767676', 245] "13
     let s:bwc.gray10  = ['626262', 246] "14
@@ -168,9 +170,9 @@ call s:HL('Folded', 'gray09', 'nocol', 'none')
 call s:HL('VertSplit', 'gray10', 'nocol', 'none')
 
 if &background == 'dark'
-    call s:HL('CursorLine',   '', 'gray02', 'none')
+    call s:HL('CursorLine',   '', 'gray03', 'none')
 else
-    call s:HL('CursorLine',   '', 'gray02', 'none')
+    call s:HL('CursorLine',   '', 'gray03', 'none')
 endif
     
 call s:HL('CursorColumn', '', 'gray02')
@@ -180,7 +182,7 @@ call s:HL('TabLine', 'gray03', 'gray08', 'none')
 call s:HL('TabLineFill', 'gray18', 'nocol', 'none')
 call s:HL('TabLineSel', 'gray01', 'gray13', 'none')
 
-call s:HL('MatchParen', 'gray02', 'gray20', 'bold')
+call s:HL('MatchParen', 'gray24', 'gray08', 'bold')
 
 call s:HL('NonText',    'gray05', 'nocol')
 call s:HL('SpecialKey', 'gray05', 'nocol')
@@ -197,7 +199,7 @@ if &background == 'dark'
     call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 else
     call s:HL('StatusLine',   'gray24', 'gray10', 'none')
-    call s:HL('StatusLineNC', 'gray24', 'gray13', 'none')
+    call s:HL('StatusLineNC', 'gray23', 'gray15', 'none')
     " call s:HL('StatusLine',   'gray23', 'gray07', 'none')
     " call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 endif
@@ -360,11 +362,6 @@ call s:HL('IndentGuidesOdd', 'gray11', 'nocol')
 call s:HL('IndentGuidesEven', 'gray02', 'gray03')
 " }}}
 
-" ShowMarks {{{
-call s:HL('SyntasticErrorSign', 'nred', 'nocol', 'none')
-call s:HL('SyntasticWarningSign', 'gray13', 'nocol', 'none')
-" }}}
-
 " TagBar {{{
 call s:HL('TagBarScope', 'nmagenta', '')
 call s:HL('TagBarKind', 'nred', '')
@@ -395,31 +392,42 @@ call s:HL('clojureAnonArg', 'gray24', '', 'bold')
 " }}}
 
 " CSS {{{
-if g:trafficlights_css_props_highlight
-    call s:HL('cssColorProp', 'nyellow', '', 'none')
-    call s:HL('cssBoxProp', 'nyellow', '', 'none')
-    call s:HL('cssTextProp', 'nyellow', '', 'none')
-    call s:HL('cssRenderProp', 'nyellow', '', 'none')
-    call s:HL('cssGeneratedContentProp', 'nyellow', '', 'none')
-    call s:HL('cssPositioningProp', 'nyellow', '', 'none')
-    call s:HL('cssDimensionProp', 'nyellow', '', 'none')
-    call s:HL('cssBackgroundProp', 'nyellow', '', 'none')
-else
-    call s:HL('cssColorProp', 'nocol', '', 'none')
-    call s:HL('cssBoxProp', 'nocol', '', 'none')
-    call s:HL('cssTextProp', 'nocol', '', 'none')
-    call s:HL('cssRenderProp', 'nocol', '', 'none')
-    call s:HL('cssGeneratedContentProp', 'nocol', '', 'none')
-end
-
-call s:HL('cssValueLength', 'byellow', '', 'none')
-call s:HL('cssColor', 'byellow', '', 'none')
+" if g:trafficlights_css_props_highlight
+"     call s:HL('cssColorProp', 'nyellow', '', 'none')
+"     call s:HL('cssBoxProp', 'nyellow', '', 'none')
+"     call s:HL('cssTextProp', 'nyellow', '', 'none')
+"     call s:HL('cssRenderProp', 'nyellow', '', 'none')
+"     call s:HL('cssGeneratedContentProp', 'nyellow', '', 'none')
+"     call s:HL('cssPositioningProp', 'nyellow', '', 'none')
+"     call s:HL('cssDimensionProp', 'nyellow', '', 'none')
+"     call s:HL('cssBackgroundProp', 'nyellow', '', 'none')
+" else
+"     call s:HL('cssColorProp', 'nocol', '', 'none')
+"     call s:HL('cssBoxProp', 'nocol', '', 'none')
+"     call s:HL('cssTextProp', 'nocol', '', 'none')
+"     call s:HL('cssRenderProp', 'nocol', '', 'none')
+"     call s:HL('cssGeneratedContentProp', 'nocol', '', 'none')
+" end
+    
+call s:HL('cssFontProp', 'gray20', '', 'bold')
+call s:HL('cssTextProp', 'gray20', '', 'bold')
+call s:HL('cssBorderProp', 'gray20', '', 'bold')
+call s:HL('cssAttrRegion', 'ncyan', '', 'none')
+call s:HL('cssBackgroundProp', 'ncyan', '', 'none')
+call s:HL('cssFontAttr', 'ncyan', '', 'none')
+call s:HL('cssBorderAttr', 'ncyan', '', 'none')
+call s:HL('cssValueLength', 'ncyan', '', 'none')
+call s:HL('cssUnitDecorators', 'ncyan', '', 'none')
+call s:HL('cssColor', 'ncyan', '', 'none')
 call s:HL('cssBraces', 'gray13', '', 'none')
 call s:HL('cssIdentifier', 'bmagenta', '', 'none')
-call s:HL('cssClassName', 'nmagenta', '', 'none')
-call s:HL('cssTagName', 'nocol', '', 'none')
-call s:HL('cssDefinition', 'nyellow', '', 'none')
-call s:HL('cssUnitDecorators', 'nred', '', 'none')
+call s:HL('cssClassName', 'nblue', '', 'none')
+call s:HL('cssTagName', 'nblue', '', 'none')
+call s:HL('cssClassNameDot', 'nblue', '', 'none')
+call s:HL('cssFunctionName', 'gray20', '', 'bold')
+call s:HL('cssFunctionComma', 'gray20', '', 'bold')
+call s:HL('cssDefinition', 'gray23', '', 'none')
+call s:HL('cssVendor', 'gray18', '', 'none')
 call s:HL('cssCommonAttr', 'byellow', '', 'none')
 " }}}
 
