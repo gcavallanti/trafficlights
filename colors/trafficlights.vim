@@ -48,7 +48,7 @@ if &background == 'dark'
     let s:bwc.gray01  = ['121212', 233]
     let s:bwc.gray00  = ['000000', 232]
 
-    let s:bwc.nyellow  = ['ffcc66', 221]
+    let s:bwc.nyellow  = ['ffcc66', 222]
     let s:bwc.byellow  = ['ff0066', 220]
     let s:bwc.ngreen   = ['66cc00', 112]
     let s:bwc.bgreen   = ['00ff00', 22]
@@ -196,8 +196,8 @@ if &background == 'dark'
     call s:HL('StatusLine',   'gray03', 'gray13', 'none')
     call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 else
-    call s:HL('StatusLine',   'gray18', 'gray07', 'none')
-    call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
+    call s:HL('StatusLine',   'gray24', 'gray10', 'none')
+    call s:HL('StatusLineNC', 'gray24', 'gray13', 'none')
     " call s:HL('StatusLine',   'gray23', 'gray07', 'none')
     " call s:HL('StatusLineNC', 'gray13', 'gray04', 'none')
 endif
@@ -358,6 +358,11 @@ call s:HL('EasyMotionShade',  'gray08', 'nocol')
 " ShowMarks {{{
 call s:HL('IndentGuidesOdd', 'gray11', 'nocol')
 call s:HL('IndentGuidesEven', 'gray02', 'gray03')
+" }}}
+
+" ShowMarks {{{
+call s:HL('SyntasticErrorSign', 'nred', 'nocol', 'none')
+call s:HL('SyntasticWarningSign', 'gray13', 'nocol', 'none')
 " }}}
 
 " TagBar {{{
@@ -579,10 +584,10 @@ call s:HL('shDeref', 'gray18', '')
 " }}}
 
 " zsh {{{
-call s:HL('zshDeref', 'nmagenta', '')
-call s:HL('zshQuoted', 'nred', '')
+call s:HL('zshDeref', 'nblue', '')
+call s:HL('zshQuoted', 'nyellow', '')
 call s:HL('zshTypes', 'gray18', '')
-call s:HL('zshSubst', 'nmagenta', '')
+call s:HL('zshSubst', 'nblue', '')
 " }}}
 
 " quickfix {{{
