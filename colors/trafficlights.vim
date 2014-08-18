@@ -414,6 +414,7 @@ call s:HL('cssPseudoClassId', 'fg', 'none', 'none')
 " javascript {{{
 call s:HL('javaScriptIdentifier', 'nmagenta', 'none', 'none')
 call s:HL('javaScriptBoolean', 'nred', 'none', 'none')
+call s:HL('javaScriptFunction', 'gray18', 'none', 'bold')
 call s:HL('javaScriptBraces', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'ngreen', 'none', 'none')
 " }}}
