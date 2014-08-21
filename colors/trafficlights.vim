@@ -50,16 +50,16 @@ if &background == 'dark'
 
     let s:bwc.nyellow  = ['#ffd757', 221]
     let s:bwc.byellow  = ['#ff8700', 208]
-    let s:bwc.ngreen   = ['#5faf00', 70]
-    let s:bwc.bgreen   = ['#005f00', 22]
+    let s:bwc.ngreen   = ['#5faf00', 112]
+    let s:bwc.bgreen   = ['#005f00', 28]
     let s:bwc.nblue    = ['#5f87ff', 69]
-    let s:bwc.bblue    = ['#0000ff', 21]
+    let s:bwc.bblue    = ['#0000ff', 26]
     let s:bwc.nred     = ['#ff5f87', 204]
-    let s:bwc.bred     = ['#af005f', 125]
+    let s:bwc.bred     = ['#af005f', 89]
     let s:bwc.nmagenta = ['#875fff', 99]
-    let s:bwc.bmagenta = ['#af5fd7', 134]
-    let s:bwc.ncyan    = ['#5fafd7', 74]
-    let s:bwc.bcyan    = ['#5fd7d7', 80]
+    let s:bwc.bmagenta = ['#af5fd7', 56]
+    let s:bwc.ncyan    = ['#5fafd7', 75]
+    let s:bwc.bcyan    = ['#5fd7d7', 24]
 
     let s:bwc.background       = ['#1a1a1a', 232]
 
@@ -91,19 +91,27 @@ else
     let s:bwc.gray24  = ['#080808', 232]
 
     let s:bwc.nyellow  = ['#d75f00', 208]
-    let s:bwc.byellow  = ['#ffaf00', 214]
+    let s:bwc.byellow  = ['#ffaf00', 221]
     let s:bwc.ngreen   = ['#008700', 28]
-    let s:bwc.bgreen   = ['#afffaf', 157]
-    let s:bwc.nblue    = ['#0000ff', 21]
+    let s:bwc.bgreen   = ['#afffaf', 112]
+    let s:bwc.nblue    = ['#0000ff', 26]
     let s:bwc.bblue    = ['#5f87ff', 69]
     let s:bwc.nred     = ['#87005f', 89]
-    let s:bwc.bred     = ['#ffafaf', 217]
+    let s:bwc.bred     = ['#ffafaf', 204]
     let s:bwc.nmagenta = ['#5f00d7', 56]
-    let s:bwc.bmagenta = ['#8700d7', 92]
-    let s:bwc.ncyan    = ['#005f87', 24]
-    let s:bwc.bcyan    = ['#5fd7d7', 80]
+    let s:bwc.bmagenta = ['#8700d7', 99]
+    let s:bwc.ncyan    = ['#005f87', 30]
+    let s:bwc.bcyan    = ['#5fd7d7', 75]
 
     let s:bwc.background       = ['#f2f2f2', 232]
+endif
+" }}}
+
+" Options {{{
+if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
+    let s:gutter = 'gray02'
+else
+    let s:gutter = 'gray02'
 endif
 " }}}
 
@@ -203,7 +211,7 @@ if &background == 'dark'
     call s:HL('StatusLine', 'gray00', 'gray18', 'none')
     call s:HL('StatusLineNC', 'gray00', 'gray12', 'none')
     call s:HL('User1', 'gray18', 'gray06', 'none')
-    call s:HL('User2', 'gray24', 'none', 'none')
+    call s:HL('User2', 'gray06', 'gray18', 'none')
     call s:HL('User3', 'gray24', 'none', 'none' )
     call s:HL('User4', 'gray24', 'none', 'none')
     call s:HL('User5', 'gray24', 'none', 'none')
@@ -216,7 +224,7 @@ else
     call s:HL('StatusLine', 'gray24', 'gray06', 'none')
     call s:HL('StatusLineNC', 'gray24', 'gray12', 'none')
     call s:HL('User1', 'gray06', 'gray18', 'none')
-    call s:HL('User2', 'gray24', 'none', 'none')
+    call s:HL('User2', 'gray18', 'gray06', 'none')
     call s:HL('User3', 'gray24', 'none', 'none' )
     call s:HL('User4', 'gray24', 'none', 'none')
     call s:HL('User5', 'gray24', 'none', 'none')
@@ -231,30 +239,30 @@ endif
 " Gutter {{{
 if &background == 'dark'
     call s:HL('CursorLineNr', 'gray00', 'nyellow', 'none')
-    call s:HL('LineNr', 'gray06', 'none', 'none')
-    call s:HL('FoldColumn', 'gray06', 'none', 'none')
+    call s:HL('LineNr', 'gray06', s:gutter, 'none')
+    call s:HL('FoldColumn', 'gray06', s:gutter, 'none')
 else
     call s:HL('CursorLineNr', 'gray24', 'byellow', 'none')
-    call s:HL('LineNr', 'gray06', 'none', 'none')
-    call s:HL('FoldColumn', 'gray06', 'none', 'none')
+    call s:HL('LineNr', 'gray06', s:gutter, 'none')
+    call s:HL('FoldColumn', 'gray06', s:gutter, 'none')
 endif
-call s:HL('SignColumn', 'none', 'none', 'none')
+call s:HL('SignColumn', 'none', s:gutter, 'none')
 " }}}
 
 " Completion Menu {{{
 if &background == 'dark'
     call s:HL('Pmenu', 'gray00', 'gray18', 'none')
     call s:HL('PmenuSel', 'gray24', 'gray06', 'none')
-    call s:HL('PmenuSbar', 'none', 'gray18', 'none')
+    call s:HL('PmenuSbar', 'none', 'gray12', 'none')
     call s:HL('PmenuThumb', 'gray06', 'gray06', 'none')
 else 
     call s:HL('Pmenu', 'gray24', 'gray06', 'none')
     call s:HL('PmenuSel', 'gray00', 'gray18', 'none')
-    call s:HL('PmenuSbar', 'none', 'gray06', 'none')
-    call s:HL('PmenuThumb', 'gray18', 'gray18', 'none')
+    call s:HL('PmenuSbar', 'none', 'gray12', 'none')
+    call s:HL('PmenuThumb', 'gray12', 'gray18', 'none')
 endif
 " }}}
-
+ 
 " Cursor {{{
 call s:HL('Cursor', 'gray24', 'bred', 'none')
 call s:HL('vCursor', 'gray24', 'bred', 'none')
@@ -262,7 +270,7 @@ call s:HL('iCursor', 'gray24', 'bred', 'none')
 " }}}
 
 " Syntax highlighting {{{
-call s:HL('Special', 'ngreen', 'none', 'none')
+call s:HL('Special', 'nyellow', 'none', 'none')
 
 call s:HL('MatchParen', 'gray24', 'gray06', 'bold')
 
@@ -280,21 +288,21 @@ call s:HL('Repeat', 'gray18', 'none', 'bold')
 call s:HL('Identifier', 'fg', 'none', 'none')
 call s:HL('Function', 'nred', 'none', 'none')
 
-call s:HL('PreProc', 'bmagenta', 'none', 'none')
+call s:HL('PreProc', 'ngreen', 'none', 'none')
 call s:HL('Macro', 'ngreen', 'none', 'none')
 call s:HL('Define', 'ngreen', 'none', 'none')
 call s:HL('PreCondit', 'ngreen', 'none', 'none')
 
-call s:HL('Constant', 'nblue', 'none', 'none')
-call s:HL('Character', 'nmagenta', 'none', 'none')
-call s:HL('Boolean', 'nmagenta', 'none', 'none')
+call s:HL('Constant', 'ncyan', 'none', 'none')
+call s:HL('Character', 'ncyan', 'none', 'none')
+call s:HL('Boolean', 'ncyan', 'none', 'none')
 
 call s:HL('Number', 'ncyan', 'none', 'none')
 call s:HL('Float', 'ncyan', 'none', 'none')
 
 call s:HL('String', 'nmagenta', 'none', 'none')
 
-call s:HL('SpecialChar', 'bmagenta', 'none', 'none')
+call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
 call s:HL('Type', 'nblue', 'none', 'none')
 call s:HL('StorageClass', 'nred', 'none', 'none')
@@ -352,18 +360,19 @@ call s:HL('qfLineNr', 'bmagenta', 'none', 'none')
 " Plugins {{{
 
 " CtrlP {{{
-call s:HL('CtrlPNoEntries', 'gray00', 'nred', 'none')
-call s:HL('CtrlPMatch', 'gray24', 'gray03', 'none')
+call s:HL('CtrlPMatch', 'gray12', 'none', 'none')
 call s:HL('CtrlPLinePre', 'gray12', 'none', 'none')
 call s:HL('CtrlPPrtBase', 'gray12', 'none', 'none')
 call s:HL('CtrlPPrtText', 'fg', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray24', 'gray18', 'none')
 if &background == 'dark'
-    call s:HL('CtrlPMode1', 'gray24', 'gray06', 'none')
-    call s:HL('CtrlPMode2', 'gray00', 'gray12', 'none')
-    call s:HL('CtrlPStats', 'gray00', 'gray12', 'none')
+    call s:HL('CtrlPNoEntries', 'gray18', 'gray06', 'none')
+    call s:HL('CtrlPMode1', 'gray18', 'gray06', 'none')
+    call s:HL('CtrlPMode2', 'gray00', 'gray18', 'none')
+    call s:HL('CtrlPStats', 'gray00', 'gray18', 'none')
 else
-    call s:HL('CtrlPMode1', 'gray00', 'gray18', 'none')
+    call s:HL('CtrlPNoEntries', 'gray06', 'gray18', 'none')
+    call s:HL('CtrlPMode1', 'gray06', 'gray18', 'none')
     call s:HL('CtrlPMode2', 'gray24', 'gray06', 'none')
     call s:HL('CtrlPStats', 'gray24', 'gray06', 'none')
 endif
@@ -396,18 +405,22 @@ call s:HL('TagBarVisibilityPrivate', 'nred', 'none', 'none')
 
 " CSS {{{
 call s:HL('cssProp', 'gray18', 'none', 'bold')
-call s:HL('cssAttrComma', 'gray18', 'none', 'none')
+call s:HL('cssAttrComma', 'fg', 'none', 'none')
 call s:HL('cssFontAttr', 'gray18', 'none', 'bold')
 call s:HL('cssAttr', 'ncyan', 'none', 'none')
+call s:HL('cssInclude', 'fg', 'none', 'none')
+call s:HL('cssIncludeKeyword', 'gray18', 'none', 'bold')
 call s:HL('cssUnitDecorators', 'ncyan', 'none', 'none')
 call s:HL('cssColor', 'ncyan', 'none', 'none')
 call s:HL('cssBraces', 'fg', 'none', 'none')
 call s:HL('cssSelectorOp', 'fg', 'none', 'none')
 call s:HL('cssSelectorOp2', 'fg', 'none', 'none')
 call s:HL('cssIdentifier', 'nred', 'none', 'none')
-call s:HL('cssClassName', 'bmagenta', 'none', 'none')
+call s:HL('cssClassName', 'nmagenta', 'none', 'none')
+call s:HL('cssFunctionName', 'gray18', 'none', 'bold')
+call s:HL('cssFunctionComma', 'fg', 'none', 'none')
 call s:HL('cssTagName', 'nblue', 'none', 'none')
-call s:HL('cssClassNameDot', 'bmagenta', 'none', 'none')
+call s:HL('cssClassNameDot', 'nmagenta', 'none', 'none')
 call s:HL('cssPseudoClassId', 'fg', 'none', 'none')
 " }}}
 
@@ -436,7 +449,7 @@ call s:HL('htmlTagName', 'nred', 'none', 'none')
 call s:HL('htmlTagN', 'fg', 'none', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', 'none', 'none')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
-call s:HL('htmlArg', 'ncyan', 'none', 'none')
+call s:HL('htmlArg', 'bmagenta', 'none', 'none')
 call s:HL('htmlTitle', 'fg', 'none', 'none')
 call s:HL('htmlH1', 'fg', 'none', 'none')
 call s:HL('htmlH2', 'fg', 'none', 'none')
@@ -445,6 +458,8 @@ call s:HL('htmlH4', 'fg', 'none', 'none')
 call s:HL('htmlH5', 'fg', 'none', 'none')
 call s:HL('htmlH6', 'fg', 'none', 'none')
 call s:HL('htmlLink', 'fg', 'none', 'none')
+call s:HL('javaScript', 'fg', 'none', 'none')
+call s:HL('javaScriptMember', 'fg', 'none', 'none')
 " }}} 
 
 " Java {{{
@@ -458,7 +473,7 @@ call s:HL('javaAnnotation', 'ngreen', 'none', 'none')
 call s:HL('javaTypedef', 'ncyan', 'none', 'none')
 call s:HL('javaType', 'nblue', 'none', 'none')
 call s:HL('javaBraces', 'fg', 'none', 'none')
-call s:HL('javaExternal', 'bmagenta', 'none', 'none')
+call s:HL('javaExternal', 'ngreen', 'none', 'none')
 call s:HL('javaSpecialChar', 'ngreen', 'none', 'none')
 " }}}
 
@@ -553,7 +568,7 @@ call s:HL('pythonEscape', 'nblue')
 call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
 call s:HL('pythonPrecondit', 'ngreen', 'none', 'none')
-call s:HL('pythonInclude', 'bmagenta', 'none', 'none')
+call s:HL('pythonInclude', 'ngreen', 'none', 'none')
 call s:HL('pythonDecorator', 'ngreen', 'none', 'none')
 call s:HL('pythonRun', 'gray12', 'none', 'bold')
 call s:HL('pythonCoding', 'gray12', 'none', 'bold')
