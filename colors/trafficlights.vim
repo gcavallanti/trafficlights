@@ -98,9 +98,9 @@ else
     let s:bwc.bblue    = ['#5f87ff', 69]
     let s:bwc.nred     = ['#87005f', 89]
     let s:bwc.bred     = ['#ffafaf', 204]
-    let s:bwc.nmagenta = ['#5f00d7', 56]
+    let s:bwc.nmagenta = ['#5f00d7', 55]
     let s:bwc.bmagenta = ['#8700d7', 99]
-    let s:bwc.ncyan    = ['#005f87', 30]
+    let s:bwc.ncyan    = ['#005f87', 32]
     let s:bwc.bcyan    = ['#5fd7d7', 75]
 
     let s:bwc.background       = ['#f2f2f2', 232]
@@ -111,7 +111,7 @@ endif
 if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
     let s:gutter = 'gray02'
 else
-    let s:gutter = 'gray02'
+    let s:gutter = 'none'
 endif
 " }}}
 
@@ -300,11 +300,11 @@ call s:HL('Boolean', 'ncyan', 'none', 'none')
 call s:HL('Number', 'ncyan', 'none', 'none')
 call s:HL('Float', 'ncyan', 'none', 'none')
 
-call s:HL('String', 'nmagenta', 'none', 'none')
+call s:HL('String', 'nblue', 'none', 'none')
 
 call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
-call s:HL('Type', 'nblue', 'none', 'none')
+call s:HL('Type', 'nred', 'none', 'none')
 call s:HL('StorageClass', 'nred', 'none', 'none')
 call s:HL('Structure', 'nred', 'none', 'none')
 call s:HL('Typedef', 'nred', 'none', 'none')
@@ -449,7 +449,7 @@ call s:HL('htmlTagName', 'nred', 'none', 'none')
 call s:HL('htmlTagN', 'fg', 'none', 'none')
 call s:HL('htmlSpecialTagName', 'ngreen', 'none', 'none')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
-call s:HL('htmlArg', 'bmagenta', 'none', 'none')
+call s:HL('htmlArg', 'ncyan', 'none', 'none')
 call s:HL('htmlTitle', 'fg', 'none', 'none')
 call s:HL('htmlH1', 'fg', 'none', 'none')
 call s:HL('htmlH2', 'fg', 'none', 'none')
@@ -560,10 +560,10 @@ call s:HL('markdownCodeBlock', 'ncyan', 'none', 'none')
 " }}}
 
 " Python {{{
-call s:HL('pythonBuiltin', 'nblue')
+call s:HL('pythonBuiltin', 'nred')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
-call s:HL('pythonFunction', 'nred')
+call s:HL('pythonFunction', 'nmagenta')
 call s:HL('pythonEscape', 'nblue')
 call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
