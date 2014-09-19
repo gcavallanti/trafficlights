@@ -183,7 +183,7 @@ else
     " endif
 endif
 
-call s:HL('VertSplit', 'gray12', 'none', 'none')
+call s:HL('VertSplit', 'gray12', 'lcontrast', 'none')
 
 call s:HL('Folded', 'lcontrast', 'none', 'none')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
@@ -200,8 +200,8 @@ call s:HL('TabLineSel', 'gray00', 'gray12', 'none')
 call s:HL('NonText', 'lcontrast', 'none', 'none')
 call s:HL('SpecialKey', 'gray12', 'none', 'none')
 
-call s:HL('Search', 'hcontrast', 'lcontrast', 'none')
-call s:HL('IncSearch', 'vlcontrast', 'nyellow', 'none')
+call s:HL('Search', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('IncSearch', 'vlcontrast', 'vhcontrast', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
 call s:HL('Directory', 'nblue', 'none', 'none')
@@ -218,9 +218,9 @@ call s:HL('Tag', 'none', 'none', 'bold')
 
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
-call s:HL('StatusLine', 'hcontrast', 'vlcontrast', 'none')
-call s:HL('StatusLineNC', 'acontrast', 'vlcontrast', 'none')
-call s:HL('User1', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('StatusLine', 'hcontrast', 'lcontrast', 'none')
+call s:HL('StatusLineNC', 'acontrast', 'lcontrast', 'none')
+call s:HL('User1', 'hcontrast', 'lcontrast', 'none')
 call s:HL('User2', 'gray06', 'gray18', 'none')
 call s:HL('User3', 'gray24', 'gray03', 'none' )
 call s:HL('User4', 'gray00', 'gray18', 'bold')
@@ -254,7 +254,7 @@ call s:HL('Special', 'nyellow', 'none', 'none')
 
 call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
 
-call s:HL('Comment', 'gray12', 'none', 'none')
+call s:HL('Comment', 'gray10', 'none', 'none')
 call s:HL('Todo', 'gray12', 'none', 'none')
 call s:HL('SpecialComment', 'gray12', 'none', 'bold')
 
@@ -327,7 +327,7 @@ endif
 " quickfix {{{
 call s:HL('qfFilename', 'nmagenta', 'none', 'none')
 call s:HL('qfSeparator', 'none', 'none', 'none')
-call s:HL('qfLineNr', 'bmagenta', 'none', 'none')
+call s:HL('qfLineNr', 'nyellow', 'none', 'none')
 " }}}
 
 " }}}
@@ -341,9 +341,9 @@ call s:HL('CtrlPPrtBase', 'gray12', 'none', 'none')
 call s:HL('CtrlPPrtText', 'none', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray24', 'gray18', 'none')
 call s:HL('CtrlPNoEntries', 'gray24', 'bred', 'none')
-call s:HL('CtrlPMode1', 'gray20', 'gray06', 'none')
-call s:HL('CtrlPMode2', 'gray20', 'gray06', 'none')
-call s:HL('CtrlPStats', 'gray00', 'gray18', 'none')
+call s:HL('CtrlPMode1', 'hcontrast', 'lcontrast', 'none')
+call s:HL('CtrlPMode2', 'hcontrast', 'lcontrast', 'none')
+call s:HL('CtrlPStats', 'hcontrast', 'lcontrast', 'none')
 " }}}
 
 " EasyMotion {{{
@@ -415,12 +415,12 @@ call s:HL('diffSubname', 'byellow', 'none', 'none')
 " HTML {{{
 call s:HL('htmlTag', 'none', 'none', 'none')
 call s:HL('htmlEndTag', 'none', 'none', 'none')
-call s:HL('htmlTagName', 'nred', 'none', 'none')
+call s:HL('htmlTagName', 'nblue', 'none', 'none')
 call s:HL('htmlTagN', 'none', 'none', 'none')
 call s:HL('htmlItalic', 'none', 'none', 'none')
 call s:HL('htmlSpecialTagName', 'nred', 'none', 'none')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
-call s:HL('htmlArg', 'nblue', 'none', 'none')
+call s:HL('htmlArg', 'ncyan', 'none', 'none')
 call s:HL('htmlTitle', 'none', 'none', 'none')
 call s:HL('htmlH1', 'none', 'none', 'none')
 call s:HL('htmlH2', 'none', 'none', 'none')
@@ -430,7 +430,7 @@ call s:HL('htmlH5', 'none', 'none', 'none')
 call s:HL('htmlH6', 'none', 'none', 'none')
 call s:HL('htmlLink', 'none', 'none', 'none')
 call s:HL('htmlError', 'none', 'none', 'none')
-call s:HL('htmlString', 'ncyan', 'none', 'none')
+call s:HL('htmlString', 'nyellow', 'none', 'none')
 call s:HL('javaScript', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
@@ -459,6 +459,9 @@ call s:HL('VimNotation', 'none', 'none', 'none')
 call s:HL('VimBracket', 'none', 'none', 'none')
 call s:HL('VimParenSep', 'none', 'none', 'none')
 call s:HL('VimOption', 'nblue', 'none', 'none')
+call s:HL('VimFunction', 'nred', 'none', 'none')
+call s:HL('VimFuncName', 'nblue', 'none', 'none')
+call s:HL('VimFuncSID', 'none', 'none', 'none')
 call s:HL('vimLineComment', 'gray12', 'none', 'none')
 " }}}
 
@@ -474,7 +477,7 @@ call s:HL('shDeref', 'none', 'none', 'none')
 
 " zsh {{{
 call s:HL('zshDeref', 'nblue', 'none', 'none')
-call s:HL('zshQuoted', 'ngreen', 'none', 'none')
+call s:HL('zshQuoted', 'nyellow', 'none', 'none')
 call s:HL('zshPrecommand', 'nred', 'none', 'none')
 call s:HL('zshTypes', 'none', 'none', 'none')
 call s:HL('zshSubst', 'nblue', 'none', 'none')
@@ -538,7 +541,7 @@ call s:HL('markdownCodeBlock', 'nmagenta', 'none', 'none')
 call s:HL('pythonBuiltin', 'nblue')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
-call s:HL('pythonFunction', 'nred')
+call s:HL('pythonFunction', 'nmagenta')
 call s:HL('pythonEscape', 'nblue')
 call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
@@ -570,6 +573,7 @@ call s:HL('rubyPseudoVariable', 'nblue', 'none', 'none')
 call s:HL('rubyBlockParameter', 'none', 'none', 'none')
 call s:HL('rubyInstanceVariable', 'none', 'none', 'none')
 call s:HL('rubyModuleDeclaration', 'nred', 'none', 'none')
+call s:HL('rubyFunction', 'nred', 'none', 'none')
 call s:HL('rubyConstant', 'nmagenta', 'none', 'none')
 call s:HL('rubyAccess', 'hcontrast', 'none', 'bold')
 call s:HL('rubyAttribute', 'vhcontrast', 'none', 'bold')
