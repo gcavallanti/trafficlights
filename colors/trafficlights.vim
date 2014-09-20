@@ -266,7 +266,7 @@ call s:HL('Label', 'hcontrast', 'none', 'bold')
 call s:HL('Repeat', 'hcontrast', 'none', 'bold')
 
 call s:HL('Identifier', 'none', 'none', 'none')
-call s:HL('Function', 'nmagenta', 'none', 'none')
+call s:HL('Function', 'nred', 'none', 'none')
 
 call s:HL('PreProc', 'nmagenta', 'none', 'none')
 call s:HL('Macro', 'nmagenta', 'none', 'none')
@@ -280,7 +280,7 @@ call s:HL('Boolean', 'ncyan', 'none', 'none')
 call s:HL('Number', 'ncyan', 'none', 'none')
 call s:HL('Float', 'ncyan', 'none', 'none')
 
-call s:HL('String', 'nred', 'none', 'none')
+call s:HL('String', 'nyellow', 'none', 'none')
 
 call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
@@ -397,10 +397,10 @@ call s:HL('cssImportant', 'hcontrast', 'none', 'bold')
 " }}}
 
 " javascript {{{
-call s:HL('javaScriptIdentifier', 'vhcontrast', 'none', 'bold')
+call s:HL('javaScriptIdentifier', 'hcontrast', 'none', 'bold')
 call s:HL('javaScriptBoolean', 'ncyan', 'none', 'none')
 call s:HL('javaScriptNumber', 'ncyan', 'none', 'none')
-call s:HL('javaScriptFunction', 'vhcontrast', 'none', 'bold')
+call s:HL('javaScriptFunction', 'hcontrast', 'none', 'bold')
 call s:HL('javaScriptBraces', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'ngreen', 'none', 'none')
 " }}}
@@ -455,8 +455,8 @@ call s:HL('javaSpecialChar', 'ngreen', 'none', 'none')
 " }}}
 
 " Vimscript {{{
-call s:HL('VimMapModKey', 'vhcontrast', 'none', 'bold')
-call s:HL('VimCommand', 'vhcontrast', 'none', 'bold')
+call s:HL('VimMapModKey', 'hcontrast', 'none', 'bold')
+call s:HL('VimCommand', 'hcontrast', 'none', 'bold')
 call s:HL('VimFuncName', 'nblue', 'none', 'none')
 call s:HL('VimFuncSID', 'none', 'none', 'none')
 call s:HL('VimFunction', 'ngreen', 'none', 'none')
@@ -527,12 +527,12 @@ call s:HL('markdownListMarker', 'acontrast', 'none', 'none')
 call s:HL('markdownBlockQuote', 'acontrast', 'none', 'none')
 call s:HL('markdownItalic', 'nyellow', 'none', 'none')
 call s:HL('markdownBold', 'nyellow', 'none', 'none')
-call s:HL('markdownH1', 'vhcontrast', 'none', 'bold')
-call s:HL('markdownH2', 'vhcontrast', 'none', 'bold')
-call s:HL('markdownH3', 'vhcontrast', 'none', 'bold')
-call s:HL('markdownH4', 'vhcontrast', 'none', 'bold')
-call s:HL('markdownH5', 'vhcontrast', 'none', 'bold')
-call s:HL('markdownH6', 'vhcontrast', 'none', 'bold')
+call s:HL('markdownH1', 'hcontrast', 'none', 'bold')
+call s:HL('markdownH2', 'hcontrast', 'none', 'bold')
+call s:HL('markdownH3', 'hcontrast', 'none', 'bold')
+call s:HL('markdownH4', 'hcontrast', 'none', 'bold')
+call s:HL('markdownH5', 'hcontrast', 'none', 'bold')
+call s:HL('markdownH6', 'hcontrast', 'none', 'bold')
 call s:HL('markdownLinkText', 'ncyan', 'none', 'none')
 call s:HL('markdownIdDeclaration', 'nmagenta')
 call s:HL('markdownAutomaticLink', 'nblue', 'none', 'none')
@@ -583,7 +583,7 @@ call s:HL('rubyModuleDeclaration', 'nred', 'none', 'none')
 call s:HL('rubyFunction', 'nred', 'none', 'none')
 call s:HL('rubyConstant', 'nmagenta', 'none', 'none')
 call s:HL('rubyAccess', 'hcontrast', 'none', 'bold')
-call s:HL('rubyAttribute', 'vhcontrast', 'none', 'bold')
+call s:HL('rubyAttribute', 'hcontrast', 'none', 'bold')
 " }}}
 
 " Clojure {{{
