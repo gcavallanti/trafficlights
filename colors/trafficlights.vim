@@ -51,7 +51,7 @@ if &background == 'dark'
     let s:bwc.lcontrast = s:bwc.gray06
     let s:bwc.hcontrast = s:bwc.gray18
     let s:bwc.vhcontrast = s:bwc.gray21
-    let s:bwc.acontrast = s:bwc.gray12
+    let s:bwc.acontrast = s:bwc.gray09
 
     let s:bwc.nred     = ['#ff5f87', 204]
     let s:bwc.bred     = ['#87005f', 89]
@@ -119,7 +119,7 @@ if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
     let s:gutterfg = 'acontrast'
 else
     let s:gutterbg = 'none'
-    let s:gutterfg = 'lcontrast'
+    let s:gutterfg = 'vlcontrast'
 endif
 " }}}
 
@@ -218,9 +218,9 @@ call s:HL('Tag', 'none', 'none', 'bold')
 
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
-call s:HL('StatusLine', 'hcontrast', 'lcontrast', 'none')
-call s:HL('StatusLineNC', 'acontrast', 'lcontrast', 'none')
-call s:HL('User1', 'hcontrast', 'lcontrast', 'none')
+call s:HL('StatusLine', 'gray03', 'gray19', 'none')
+call s:HL('StatusLineNC', 'gray04', 'gray19', 'none')
+call s:HL('User1', 'gray03', 'gray19', 'none')
 call s:HL('User2', 'gray06', 'gray18', 'none')
 call s:HL('User3', 'gray24', 'gray03', 'none' )
 call s:HL('User4', 'gray00', 'gray18', 'bold')
@@ -372,9 +372,9 @@ call s:HL('TagBarVisibilityPrivate', 'nred', 'none', 'none')
 " Filetype-specific {{{
 
 " CSS {{{
-call s:HL('cssVendor', 'hcontrast', 'none', 'none')
-call s:HL('cssProp', 'hcontrast', 'none', 'bold')
-call s:HL('cssFontAttr', 'hcontrast', 'none', 'bold')
+call s:HL('cssVendor', 'none', 'none', 'none')
+call s:HL('cssProp', 'none', 'none', 'none')
+call s:HL('cssFontAttr', 'none', 'none', 'none')
 call s:HL('cssAttrComma', 'none', 'none', 'none')
 call s:HL('cssAttr', 'ncyan', 'none', 'none')
 call s:HL('cssAttributeSelector', 'none', 'none', 'none')
@@ -388,13 +388,20 @@ call s:HL('cssSelectorOp2', 'none', 'none', 'none')
 call s:HL('cssIdentifier', 'nred', 'none', 'none')
 call s:HL('cssClassName', 'nmagenta', 'none', 'none')
 call s:HL('cssClassNameDot', 'nmagenta', 'none', 'none')
-call s:HL('cssFunctionName', 'gray18', 'none', 'bold')
+call s:HL('cssFunctionName', 'none', 'none', 'none')
 call s:HL('cssFunctionComma', 'none', 'none', 'none')
 call s:HL('cssTagName', 'nblue', 'none', 'none')
 call s:HL('cssPseudoClassId', 'none', 'none', 'none')
 call s:HL('cssPseudoClassFn', 'nblue', 'none', 'none')
-call s:HL('cssImportant', 'hcontrast', 'none', 'bold')
+call s:HL('cssImportant', 'none', 'none', 'none')
 " }}}
+
+" " Syntastic {{{
+" call s:HL('SyntasticError', 'none', 'none', 'none')
+" call s:HL('SyntasticWarning', 'none', 'none', 'none')
+" call s:HL('SyntasticStyleError', 'none', 'none', 'none')
+" call s:HL('SyntasticStyleWarning', 'none', 'none', 'none')
+" " }}}
 
 " javascript {{{
 call s:HL('javaScriptIdentifier', 'hcontrast', 'none', 'bold')
@@ -424,7 +431,7 @@ call s:HL('htmlItalic', 'none', 'none', 'none')
 call s:HL('htmlBold', 'none', 'none', 'none')
 call s:HL('htmlSpecialTagName', 'nred', 'none', 'none')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
-call s:HL('htmlArg', 'ncyan', 'none', 'none')
+call s:HL('htmlArg', 'none', 'none', 'none')
 call s:HL('htmlTitle', 'none', 'none', 'none')
 call s:HL('htmlH1', 'none', 'none', 'none')
 call s:HL('htmlH2', 'none', 'none', 'none')
