@@ -119,7 +119,7 @@ if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
     let s:gutterfg = 'acontrast'
 else
     let s:gutterbg = 'none'
-    let s:gutterfg = 'vlcontrast'
+    let s:gutterfg = 'lcontrast'
 endif
 " }}}
 
@@ -198,7 +198,7 @@ call s:HL('TabLineFill', 'gray18', 'none', 'none')
 call s:HL('TabLineSel', 'gray00', 'gray12', 'none')
 
 call s:HL('NonText', 'lcontrast', 'none', 'none')
-call s:HL('SpecialKey', 'gray12', 'none', 'none')
+call s:HL('SpecialKey', 'vlcontrast', 'none', 'none')
 
 call s:HL('Search', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('IncSearch', 'vlcontrast', 'vhcontrast', 'none')
@@ -218,9 +218,9 @@ call s:HL('Tag', 'none', 'none', 'bold')
 
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
-call s:HL('StatusLine', 'gray03', 'gray19', 'none')
-call s:HL('StatusLineNC', 'gray04', 'gray19', 'none')
-call s:HL('User1', 'gray03', 'gray19', 'none')
+call s:HL('StatusLine', 'vlcontrast', 'hcontrast', 'none')
+call s:HL('StatusLineNC', 'lcontrast', 'hcontrast', 'none')
+call s:HL('User1', 'vlcontrast', 'hcontrast', 'none')
 call s:HL('User2', 'gray06', 'gray18', 'none')
 call s:HL('User3', 'gray24', 'gray03', 'none' )
 call s:HL('User4', 'gray00', 'gray18', 'bold')
@@ -341,9 +341,9 @@ call s:HL('CtrlPPrtBase', 'gray12', 'none', 'none')
 call s:HL('CtrlPPrtText', 'none', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray24', 'gray18', 'none')
 call s:HL('CtrlPNoEntries', 'gray24', 'bred', 'none')
-call s:HL('CtrlPMode1', 'hcontrast', 'lcontrast', 'none')
-call s:HL('CtrlPMode2', 'hcontrast', 'lcontrast', 'none')
-call s:HL('CtrlPStats', 'hcontrast', 'lcontrast', 'none')
+call s:HL('CtrlPMode1', 'vlcontrast', 'hcontrast', 'none')
+call s:HL('CtrlPMode2', 'vlcontrast', 'hcontrast', 'none')
+call s:HL('CtrlPStats', 'vlcontrast', 'hcontrast', 'none')
 " }}}
 
 " EasyMotion {{{
@@ -429,7 +429,7 @@ call s:HL('htmlTagName', 'nblue', 'none', 'none')
 call s:HL('htmlTagN', 'none', 'none', 'none')
 call s:HL('htmlItalic', 'none', 'none', 'none')
 call s:HL('htmlBold', 'none', 'none', 'none')
-call s:HL('htmlSpecialTagName', 'nred', 'none', 'none')
+call s:HL('htmlSpecialTagName', 'nblue', 'none', 'none')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
 call s:HL('htmlArg', 'none', 'none', 'none')
 call s:HL('htmlTitle', 'none', 'none', 'none')
