@@ -68,6 +68,23 @@ if &background == 'dark'
 
     let s:bwc.background       = ['#1a1a1a', 232]
 
+let s:bwc.nred     = ['#ff5f87', 1]
+let s:bwc.bred     = ['#87005f', 9]
+let s:bwc.ngreen   = ['#87d700', 2]
+let s:bwc.bgreen   = ['#008700', 10]
+let s:bwc.nyellow  = ['#ffd757', 3]
+let s:bwc.byellow  = ['#ff8700', 11]
+let s:bwc.nblue    = ['#5f87ff', 4]
+let s:bwc.bblue    = ['#005fd7', 12]
+let s:bwc.nmagenta = ['#875fff', 5]
+let s:bwc.bmagenta = ['#5f00af', 13]
+let s:bwc.ncyan    = ['#5fafff', 6]
+let s:bwc.bcyan    = ['#0087d7', 14]
+
+let s:bwc.lcontrast  = ['#080808', 0]
+let s:bwc.vlcontrast  = ['#080808', 8]
+let s:bwc.hcontrast  = ['#080808', 15]
+let s:bwc.vhcontrast  = ['#080808', 7]
 else
     let s:bwc.vlcontrast = s:bwc.gray21
     let s:bwc.lcontrast = s:bwc.gray18
@@ -89,10 +106,6 @@ else
     let s:bwc.ncyan    = ['#0087d7', 32]
 
     let s:bwc.background       = ['#f2f2f2', 232]
-endif
-
-""" TEST
-
 let s:bwc.nred     = ['#ff5f87', 1]
 let s:bwc.bred     = ['#87005f', 9]
 let s:bwc.ngreen   = ['#87d700', 2]
@@ -106,10 +119,31 @@ let s:bwc.bmagenta = ['#5f00af', 13]
 let s:bwc.ncyan    = ['#5fafff', 6]
 let s:bwc.bcyan    = ['#0087d7', 14]
 
-let s:bwc.lcontrast  = ['#080808', 0]
-let s:bwc.vlcontrast  = ['#080808', 8]
-let s:bwc.hcontrast  = ['#080808', 15]
-let s:bwc.vhcontrast  = ['#080808', 7]
+let s:bwc.lcontrast  = ['#080808', 15]
+let s:bwc.vlcontrast  = ['#080808', 7]
+let s:bwc.hcontrast  = ['#080808', 0]
+let s:bwc.vhcontrast  = ['#080808', 8]
+endif
+
+""" TEST
+
+" let s:bwc.nred     = ['#ff5f87', 1]
+" let s:bwc.bred     = ['#87005f', 9]
+" let s:bwc.ngreen   = ['#87d700', 2]
+" let s:bwc.bgreen   = ['#008700', 10]
+" let s:bwc.nyellow  = ['#ffd757', 3]
+" let s:bwc.byellow  = ['#ff8700', 11]
+" let s:bwc.nblue    = ['#5f87ff', 4]
+" let s:bwc.bblue    = ['#005fd7', 12]
+" let s:bwc.nmagenta = ['#875fff', 5]
+" let s:bwc.bmagenta = ['#5f00af', 13]
+" let s:bwc.ncyan    = ['#5fafff', 6]
+" let s:bwc.bcyan    = ['#0087d7', 14]
+
+" let s:bwc.lcontrast  = ['#080808', 0]
+" let s:bwc.vlcontrast  = ['#080808', 8]
+" let s:bwc.hcontrast  = ['#080808', 15]
+" let s:bwc.vhcontrast  = ['#080808', 7]
 " }}}
 
 let g:trafficlights_darkgutter = 0
@@ -183,7 +217,7 @@ else
     " endif
 endif
 
-call s:HL('VertSplit', 'gray12', 'lcontrast', 'none')
+call s:HL('VertSplit', 'gray10', 'gray04', 'none')
 
 call s:HL('Folded', 'lcontrast', 'none', 'none')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
@@ -218,8 +252,8 @@ call s:HL('Tag', 'none', 'none', 'bold')
 
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
-call s:HL('StatusLine', 'vlcontrast', 'hcontrast', 'none')
-call s:HL('StatusLineNC', 'lcontrast', 'hcontrast', 'none')
+call s:HL('StatusLine', 'gray02', 'gray17', 'none')
+call s:HL('StatusLineNC', 'gray02', 'gray14', 'none')
 call s:HL('User1', 'vlcontrast', 'hcontrast', 'none')
 call s:HL('User2', 'gray06', 'gray18', 'none')
 call s:HL('User3', 'gray24', 'gray03', 'none' )
@@ -232,7 +266,7 @@ call s:HL('User9', 'none', 'none', 'none')
 call s:HL('User0', 'none', 'none', 'none')
 
 " Gutter {{{
-call s:HL('CursorLineNr', 'nyellow', 'none', 'none')
+call s:HL('CursorLineNr', 'acontrast', 'none', 'none')
 call s:HL('LineNr', s:gutterfg, s:gutterbg, 'none')
 call s:HL('FoldColumn', 'lcontrast', s:gutterbg, 'none')
 call s:HL('SignColumn', 'none', s:gutterbg, 'none')
@@ -254,7 +288,7 @@ call s:HL('Special', 'nyellow', 'none', 'none')
 
 call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
 
-call s:HL('Comment', 'gray10', 'none', 'none')
+call s:HL('Comment', 'lcontrast', 'none', 'none')
 call s:HL('Todo', 'gray12', 'none', 'none')
 call s:HL('SpecialComment', 'gray12', 'none', 'bold')
 
@@ -269,9 +303,9 @@ call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Function', 'nred', 'none', 'none')
 
 call s:HL('PreProc', 'nmagenta', 'none', 'none')
-call s:HL('Macro', 'nmagenta', 'none', 'none')
-call s:HL('Define', 'nmagenta', 'none', 'none')
-call s:HL('PreCondit', 'nmagenta', 'none', 'none')
+call s:HL('Macro', 'nred', 'none', 'none')
+call s:HL('Define', 'nred', 'none', 'none')
+call s:HL('PreCondit', 'nred', 'none', 'none')
 
 call s:HL('Constant', 'ncyan', 'none', 'none')
 call s:HL('Character', 'ncyan', 'none', 'none')
@@ -341,9 +375,9 @@ call s:HL('CtrlPPrtBase', 'gray12', 'none', 'none')
 call s:HL('CtrlPPrtText', 'none', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray24', 'gray18', 'none')
 call s:HL('CtrlPNoEntries', 'gray24', 'bred', 'none')
-call s:HL('CtrlPMode1', 'vlcontrast', 'hcontrast', 'none')
-call s:HL('CtrlPMode2', 'vlcontrast', 'hcontrast', 'none')
-call s:HL('CtrlPStats', 'vlcontrast', 'hcontrast', 'none')
+call s:HL('CtrlPMode1', 'gray02', 'gray17', 'none')
+call s:HL('CtrlPMode2', 'gray02', 'gray17', 'none')
+call s:HL('CtrlPStats', 'gray02', 'gray17', 'none')
 " }}}
 
 " EasyMotion {{{
@@ -441,7 +475,7 @@ call s:HL('htmlH5', 'none', 'none', 'none')
 call s:HL('htmlH6', 'none', 'none', 'none')
 call s:HL('htmlLink', 'none', 'none', 'none')
 call s:HL('htmlError', 'none', 'none', 'none')
-call s:HL('htmlString', 'nyellow', 'none', 'none')
+call s:HL('htmlString', 'nmagenta', 'none', 'none')
 call s:HL('javaScript', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
@@ -476,7 +510,7 @@ call s:HL('VimOption', 'nblue', 'none', 'none')
 call s:HL('VimFunction', 'nred', 'none', 'none')
 call s:HL('VimFuncName', 'nblue', 'none', 'none')
 call s:HL('VimFuncSID', 'none', 'none', 'none')
-call s:HL('vimLineComment', 'gray12', 'none', 'none')
+call s:HL('vimLineComment', 'lcontrast', 'none', 'none')
 " }}}
 
 " sh {{{
@@ -491,7 +525,7 @@ call s:HL('shDeref', 'none', 'none', 'none')
 
 " zsh {{{
 call s:HL('zshDeref', 'nblue', 'none', 'none')
-call s:HL('zshQuoted', 'nyellow', 'none', 'none')
+call s:HL('zshQuoted', 'nblue', 'none', 'none')
 call s:HL('zshPrecommand', 'nred', 'none', 'none')
 call s:HL('zshTypes', 'none', 'none', 'none')
 call s:HL('zshSubst', 'nblue', 'none', 'none')
@@ -555,7 +589,7 @@ call s:HL('markdownCodeBlock', 'nmagenta', 'none', 'none')
 call s:HL('pythonBuiltin', 'nblue')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
-call s:HL('pythonFunction', 'nmagenta')
+call s:HL('pythonFunction', 'nred')
 call s:HL('pythonEscape', 'nblue')
 call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
@@ -569,6 +603,7 @@ call s:HL('pythonCoding', 'gray12', 'none', 'bold')
 " }}}
 
 " Ruby {{{
+call s:HL('rubyComment', 'lcontrast', 'none', 'none')
 call s:HL('rubyBlock', 'hcontrast', 'none', 'bold')
 call s:HL('rubyClass', 'hcontrast', 'none', 'bold')
 call s:HL('rubyModule', 'hcontrast', 'none', 'bold')
